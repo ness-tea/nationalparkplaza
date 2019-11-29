@@ -17,9 +17,12 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Prepare SQL and bind parameters for preventing malicious attacks/injections
-    $query = "INSERT INTO Users (fullname, birthdate, email, pw) 
-            VALUES (:fullname, :birthdate, :email, :pass)
-            WHERE NOT EXISTS (SELECT * FROM Users WHERE email = :email)";
+    if ("SELECT COUNT(*) FROM Users WHERE email = $email" == 0)
+    {
+        $query = "INSERT INTO Users (fullname, birthdate, email, pw) 
+                VALUES (:fullname, :birthdate, :email, :pass)";
+    }
+
     $stmt = $conn->prepare($query);
     $stmt->execute(array(':fullname'=> $fullname, ':birthdate'=> $birthdate, ':email'=> $email, ':pass'=> $pass));
     
