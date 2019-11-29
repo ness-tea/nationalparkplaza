@@ -9,6 +9,7 @@ $dbname = "nationalparkplaza";
 // Store user entries from registration.php
 $fullname = mysql_real_escape_string($_POST['fullname']);
 $birthdate = mysql_real_escape_string(date('Y-m-d', strtotime($_POST['birthday'])));
+echo "$birthdate";
 $email = mysql_real_escape_string($_POST['email']);
 $pass = md5(mysql_real_escape_string($_POST['pass']));  // hash password for security
 
