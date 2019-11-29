@@ -89,11 +89,15 @@ ul {
 
 }
 
+.register-button {
+    border: 1px solid #bbb;
+} 
+
 /* Make list objects in-line and style border properties */
 li {
-    width: 150px;
+    width: 140px;
     display: inline-block;
-    border: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
 }
 
 /* Dropdown menu styling */
