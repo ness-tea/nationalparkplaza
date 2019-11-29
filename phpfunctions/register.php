@@ -11,7 +11,7 @@ $email = $_POST['email'];
 $password = $_POST['pass'];
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", '$username', '$password');    
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // // $query = "INSERT INTO Users (fullname, birthdate, email, password) 
