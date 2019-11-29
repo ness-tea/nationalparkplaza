@@ -1,50 +1,88 @@
-<?php 
-    $servername = "nationalparkplazadb.cjpr4ybdu2p3.us-east-2.rds.amazonaws.com";
-    $username = "truonv1";
-    $password = "12345678";
-    $dbname = "nationalparkplaza";
-    $email = $_POST['email'];
-    $password = $_POST['pass'];
+<!doctype html>
+<html>
 
-    session_start();
-    
-    // using php data objects we set the login parameters for the database. 
-    // More information here: https://www.php.net/manual/en/intro.pdo.php
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<head>
+    <meta charset="UTF-8" />
+    <title>National Park Plaza</title>
 
-    if (isset($email) && isset($password)){
+    <!-- Linking google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Forum|Julius+Sans+One|Lateef|Open+Sans&display=swap" rel="stylesheet">
 
-        // Query we are using to check if the user is legit
-        //$sql = "Select * from Users where Email=? and Password=?";
-        $query = "SELECT * FROM Users WHERE email = '$email' AND password = '$password'";
-        // Prepared statements: For when we don't have all the parameters so we store a template to be executed
-        // More information here: https://www.w3schools.com/php/php_mysql_prepared_statements.asp
-        $stmnt = $conn->prepare($query);
-        try {
-            $stmnt->execute([$email, $password]);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
+    <!-- Linking the css stylesheet to style html elements -->
+    <link href="css/main.css" type="text/css" rel="stylesheet">
 
-        // For getting data from the query to submitted above.
-        $rows = $stmnt->fetchAll();
+    <!-- Linking favicon png -->
+    <link rel="icon" href="assets/header-ico.png">
 
-        // If there is only one user
-        if (count($rows) == 1){
-            // Setting the session to the returned user ID.
-            $_SESSION['ID'] = $rows[0]['ID'];
-            // Redirect to table of users.
+    <script src="scripts/js/validation.js"></script> 
+</head>
+
+<body>
+    <!-- This is the header, which style defined in the css -->
+    <div class="header">
+        <ul>
+            <div class="header-left">
+                <li><a href="index.php">Search</a></li>
+                <li><a href="review.php">Write Review</a></li>
+                <li><a href="submit.php">Submit Park</a></li>
+            </div>
+            <div class="header-right">
+                <li><a class="active" href="login.php">Login</a></li>
+                <li><a href="registration.php">Register</a></li>
+            </div>
+        </ul>
+        <h1 class="title">NATIONAL PARK PLAZA</h1>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Wrapper for registration page content -->
+    <div class="wrap-login">
+        <!-- Applying indent css styling -->
+        <div id="indent"></div>
+
+        <!-- Registration page content -->
+        <div class="login-content">
+            <h1>Log into an Account</h1>
+            Log in and explore National Parks in your area today!
             
-            header("Location: https://nationalparksplaza.ga/index.php");
-        } else {
-            header("Location: https://nationalparksplaza.ga/index.php");
-        }
+            <!-- Form tag for submitting user name, birth date, email and account password, as well as the submit/reset buttons -->
+            <div class="login-form"  >
 
-    } else {
-        // This path is dependent on where the root of your documents is located.
-        // For this it is made to point back to the index file if login has failed.
-        header("Location: https://nationalparksplaza.ga/index.php");
-    }
-?>
+                <!-- Call validateRegistration on submit input -->
+                <form name="register" onsubmit="return validateRegistration()" method="post">
+                    <br>
+                    <p>Email:</p>
+                    <input required type="email" name="email">
+
+                    <br>
+                    <p>Account password:</p>
+                    <input required type="password" name="pass">
+                    
+                    <br>
+                    <br>
+                    
+                    <input type="submit" value="Log In">
+                    <input type="reset" value="Reset">
+
+                    <br>
+                    <p style="font-size: 1em">Don't have an account? <a href="registration.php"><b>Register now</b></a></p>
+                </form>
+            </div>
+        </div>
+        <br/><br/><br/>
+    </div>
+
+    <!-- Footer layout for Contact Information -->
+    <div class="footer">
+        <footer>
+            <h1 class="footer-title"><b>Contact Information</b></h1>
+            <p>
+                Jiuwei Wang <a href="mailto:wangj160@mcmaster.ca">wangj160@mcmaster.ca</a>,
+                Vanessa Truong <a href="mailto:truonv1@mcmaster.ca">truonv1@mcmaster.ca</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

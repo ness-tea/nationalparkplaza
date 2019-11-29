@@ -30,7 +30,7 @@ h1 {
 
 /* Website header styling */
 .header {
-    padding-bottom: 2%;
+    padding: 2% 5%;
     background-color: black;
     background-size: cover;
 }
@@ -49,12 +49,12 @@ h1 {
 .title {
     font-family: 'Julius Sans One', sans-serif;
     text-align: center;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: bold;
     letter-spacing: 0.5em;
     color: white;
     margin-top: 0;
-    padding-top: 5%;
+    padding-top: 7%;
 }
 
 .divider {
@@ -86,12 +86,7 @@ h1 {
 
 ul {
     margin: 0;
-
 }
-
-.register-button {
-    border-bottom: 1px solid #bbb;
-} 
 
 /* Make list objects in-line and style border properties */
 li {
