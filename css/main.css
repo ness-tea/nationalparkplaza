@@ -33,6 +33,7 @@ h1 {
     padding-bottom: 2%;
     background-color: black;
     background-size: cover;
+    margin: 3% 5%
 }
 
 .header-left {
@@ -49,7 +50,7 @@ h1 {
 .title {
     font-family: 'Julius Sans One', sans-serif;
     text-align: center;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: bold;
     letter-spacing: 0.5em;
     color: white;
