@@ -3,24 +3,24 @@
 
 **https://nationalparkplaza.ga/**
 
-The term project for course 4WW3 (Web Systems and Web Computing). 
+The term project for 4WW3 (Web Systems and Computing). 
 
-This site will allow users to browse and submit reviews for national parks.
+The National Park Plaza site allows users to do the following:
+- Browse parks across Canada and provide readily accessible information. 
+- Find Canadian parks nearby based on their location.
+- Register an account to write reviews for and submit new parks to the database.
 
 ## Collaborators:
-* Jiuwei Wang (400061882) - Enrolled in 4WW3
- *MacID: wangj160*<br/> 
- *Git User Name: WebProject4WW3*<br/>
- *email: wangj160@mcmaster.ca*
-* Vanessa Truong (400023632) - Enrolled in 4WW3
+* Vanessa Truong (400023632)
  *MacID: truonv1*<br/>
  *Git User Name: nessa-art*<br/>
  *email: truonv1@mcmaster.ca*
-
-The following is a rundown of answers for our completed Add-on Task 2.
+ *Enrolled in CS 4WW3
+ 
+The following are answers to the inquiries needed for **Add-on Task 2**.
 
 ## Add-on Task 2 
-### Part i) 
+### (Part i) 
 The <picture> tag was incorporated in the sample object page, 'Bruce Peninsula National Park' under the 'National Parks' tab. There is an acorn logo at the top-right
 corner of the webpage that will alternate between resizings as follows:
 - 2 acorns (assets/acorn_2.jpg) when min-width is 800px
@@ -55,7 +55,7 @@ that represents the image the browser will fall back to if the former <source> t
 
 The <source> tags will present the images if the requirement specified by the 'media' attribute are satisfied. This would mean that the image 'search-tree-4.jpg' will only be shown in the browser if the media condition 'min-width: 800px' is satisfied, and the image 'search-tree 3.jpg' will be shown if the media condition 'min-width: 470px' is satisfied. The <img> tag represents the image that will be shown if the 'media' conditions for both sources above can not be satisfied, or if support for <source> tag is not available on the browser.
 
-### Part ii)
+### Part (ii)
 Three positive goals that can be achieved through using <picture> and <source> attributes:
 
 1. **You can dynamically resize images to fit screens of all sizes.** If you have the same image in multiple sizes, you can choose to present each image under 
@@ -68,7 +68,7 @@ the webpage presents a different image with different resizing. This can create 
 3. **You can adjust the orientation of the picture.** The <source> tag has an attribute that allows you to orient your images a different way. This avoids the hassle 
 of having to orient the picture using an editor. 
 
-### Part iii)
+### Part (iii)
 A negative aspect of using <picture> and <source> is that if a developer is using it for the purposes of presenting the same image but at different resolutions,
 they would need to create multiple versions of that image in different resolutions, and link all of them separately in their own <source> tags. Ideally, it would be
 more efficient if the developer only has to upload one version of the photo (a high resolution version) and HTML can dynamically resize the image based on the developer's
