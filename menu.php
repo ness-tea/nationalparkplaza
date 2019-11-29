@@ -1,14 +1,21 @@
 
 <!-- Menu/nav bar and webpage title -->
-<ul>
-    <div class="header-left">
-        <li><a class="active" href="index.php">Search</a></li>
-        <li><a href="review.php">Write Review</a></li>
-        <li><a href="submit.php">Submit Park</a></li>
+<body>
+    <div class="header">
+        <ul>
+            <div class="header-left">
+                <li><a class="active" href="index.php">Search</a></li>
+                <li><a href="review.php">Write Review</a></li>
+                <li><a href="submit.php">Submit Park</a></li>
+            </div>
+            <div class="header-right">
+                <li><a href="login.php">Login</a></li>
+                <li><a href="registration.php">Register</a></li>
+            </div>
+        </ul>
+        <h1 class="title">NATIONAL PARK PLAZA</h1> 
+        <h2 style="font-size: 30px">EXPERIENCE THE BEAUTY OF CANADA</h2>
     </div>
-    <div class="header-right">
-        <li><a href="login.php">Login</a></li>
-        <li><a href="registration.php">Register</a></li>
-    </div>
-</ul>
-<h1 class="title">NATIONAL PARK PLAZA</h1> 
+
+    <hr class="divider">
+
