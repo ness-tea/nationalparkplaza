@@ -23,7 +23,11 @@ try {
     $birthdate = $_POST['birthday'];
     $email = $_POST['email'];
     $pass = md5($_POST['pass']);  // hash password for security
-    $stmt -> exec();
+    
+    if (!$stmt -> exec())
+    {
+        echo "Something in exec() failed";
+    }
     
     echo "User added successfully";
 }
