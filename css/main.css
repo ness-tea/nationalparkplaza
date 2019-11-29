@@ -33,7 +33,7 @@ h1 {
     padding-bottom: 2%;
     background-color: black;
     background-size: cover;
-    padding: 3% 5%
+    padding: 0% 5%
 }
 
 .header-left {
@@ -119,7 +119,6 @@ li a:hover:not(.active),
 .dropdown:hover .dropbtn:not(.active) {
     background-color: #414540;
     color: white;
-    border-bottom: 1px solid #bbb;
 }
 
 /* Styling the dropdown menu in lines */
