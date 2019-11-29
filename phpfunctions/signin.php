@@ -40,6 +40,8 @@ try
             header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
         }
 
+        echo "Log in successful";
+
     } else {
         // This path is dependent on where the root of your documents is located.
         // For this it is made to point back to the index file if login has failed.
