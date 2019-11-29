@@ -11,7 +11,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Prepare SQL and bind parameters for preventing malicious attacks/injections
-    $stmt = $conn->prepare("INSERT INTO Users (fullname, birthdate, email, `password`) 
+    $stmt = $conn->prepare("INSERT INTO Users (fullname, birthdate, email, pass) 
                             VALUES (:fullname, :birthdate, :email, :pass)");  
     $stmt->bindParam(':fullname', $fullname);
     $stmt->bindParam(':birthdate', $birthdate);
