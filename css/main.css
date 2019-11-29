@@ -97,7 +97,6 @@ ul {
 li {
     width: 140px;
     display: inline-block;
-    border-bottom: 1px solid #bbb;
 }
 
 /* Dropdown menu styling */
@@ -119,7 +118,7 @@ li a:hover:not(.active),
 .dropdown:hover .dropbtn:not(.active) {
     background-color: #414540;
     color: white;
-
+    border-bottom: 1px solid #bbb;
 }
 
 /* Styling the dropdown menu in lines */
