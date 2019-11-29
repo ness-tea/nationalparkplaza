@@ -16,8 +16,7 @@ try {
         fullname VARCHAR(50) NOT NULL,
         birthdate VARCHAR(30) NOT NULL,
         email VARCHAR(50) NOT NULL,
-        pw VARCHAR(30) NOT NULL,
-        reg_date TIMESTAMP
+        pw VARCHAR(30) NOT NULL
         )";   
     $conn->exec($createUsers);
 
@@ -29,8 +28,7 @@ try {
         parkname VARCHAR(100) NOT NULL,
         dsc VARCHAR(500) NOT NULL,      
         longitude VARCHAR(50) NOT NULL,
-        latitude VARCHAR(50) NOT NULL,
-        sub_date TIMESTAMP
+        latitude VARCHAR(50) NOT NULL
         )";
      $conn->exec($createParks);
 
@@ -42,8 +40,7 @@ try {
         email VARCHAR(50) NOT NULL,
         parkname VARCHAR(100) NOT NULL,
         rating VARCHAR(30) NOT NULL,
-        review VARCHAR(300),
-        rev_date TIMESTAMP
+        review VARCHAR(300)
         )";
     $conn->exec($createReviews);
 
