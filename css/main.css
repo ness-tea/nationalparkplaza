@@ -33,7 +33,6 @@ h1 {
     padding-bottom: 2%;
     background-color: black;
     background-size: cover;
-    padding: 1% 5%
 }
 
 .header-left {
@@ -50,12 +49,12 @@ h1 {
 .title {
     font-family: 'Julius Sans One', sans-serif;
     text-align: center;
-    font-size: 45px;
+    font-size: 60px;
     font-weight: bold;
     letter-spacing: 0.5em;
     color: white;
     margin-top: 0;
-    padding: 3% 0;
+    padding-top: 5%;
 }
 
 .divider {
@@ -90,8 +89,8 @@ ul {
 
 }
 
-#register-button {
-    border: 1px solid #bbb;
+.register-button {
+    border-bottom: 1px solid #bbb;
 } 
 
 /* Make list objects in-line and style border properties */
@@ -102,7 +101,8 @@ li {
 }
 
 /* Dropdown menu styling */
-li a {
+li a,
+.dropbtn {
     display: block;
     color: white;
     text-align: center;
@@ -115,9 +115,42 @@ li a.active {
 }
 
 /* Styling list items when hovering over */
-li a:hover:not(.active) {
+li a:hover:not(.active),
+.dropdown:hover .dropbtn:not(.active) {
     background-color: #414540;
     color: white;
+
+}
+
+/* Styling the dropdown menu in lines */
+li.dropdown {
+    display: inline-block;
+}
+
+/* Styling the dropdown menu whith shadow */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+}
+
+/* Styling the dropdown menu content words*/
+.dropdown-content a {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* When hover the dropdown menu, the content display in clock*/
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Styling the background image on search page */
