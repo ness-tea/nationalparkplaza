@@ -11,11 +11,11 @@ The National Park Plaza site allows users to do the following:
 - Register an account to write reviews for and submit new parks to the database.
 
 ## Collaborators:
-* Vanessa Truong (400023632)
+** Vanessa Truong (400023632)<br/>
  *MacID: truonv1*<br/>
  *Git User Name: nessa-art*<br/>
- *email: truonv1@mcmaster.ca*
- *Enrolled in CS 4WW3
+ *email: truonv1@mcmaster.ca*<br/>
+ *Enrolled in CS 4WW3*
  
 The following are answers to the inquiries needed for **Add-on Task 2**.
 
