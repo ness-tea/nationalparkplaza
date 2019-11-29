@@ -1,0 +1,17 @@
+# appspec.yml - Used for CodeDeploy to link Github code to EC2 instance
+
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/
+
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      runas: root
+    - location: scripts/startapache.sh
+      runas: root
+  AfterInstall:
+    - location: scripts/restartapache.sh
+      runas: root

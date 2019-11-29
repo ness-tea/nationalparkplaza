@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>National Park Plaza</title>
+
+    <!--- Google fonts --->
+    <link href="https://fonts.googleapis.com/css?family=Forum|Julius+Sans+One|Lateef|Open+Sans&display=swap" rel="stylesheet">
+
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link rel="icon" href="assets/header-ico.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="scripts/js/parkMap.js"></script>
+</head>
+
+<body>
+    <div id="body-content"></div>
+    <div class="header">
+        <h1 class="title">NATIONAL PARK PLAZA</h1>
+
+        <ul>
+            <li><a href="index.html">Search</a></li>
+            <li><a href="results.html">Parks</a></li>
+            <li class="dropdown">
+                <a class="active" href="javascript:void(0)" class="dropbtn">National Parks</a>
+                <div class="dropdown-content">
+                    <a href="object1.html">Bruce Peninsula National Park</a>
+                    <a href="object2.html">Georgian Bay Islands National Park</a>
+                    <a class="active" href="object3.html">Point Pelee National Park</a>
+                </div>
+            </li>
+            <li><a href="object_submission.html">Submit a Park</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="login.html">LogIn</a></li>
+        </ul>
+    </div>
+
+    <div class="wrap-object">
+        <div class="object" id="indent">
+            <h1>POINT PELEE NATIONAL PARK</h1>
+            <p>
+                <a href="write_review.html" class="buttonReview">Write an review</a>
+            </p>
+            <h2>General Park Information</h2>
+            <p>At the southernmost point of the Canadian mainland - Point Pelee National Park, experience nature like never before. Each spring, view flocks of migratory birds, joined in autumn by waves of vivid Monarch butterflies. In winter, wander snowy trails past ice-cloaked trees and in summer, bask on sandy beaches. Whether you cycle, paddle or hike Canada’s smallest but most ecologically diverse national park, you’ll be immersed in an unforgettable eco-adventure.</p>
+
+            <video width="480" height="400" controls>
+                <source src="assets/Point Pelee National Park.mp4" type="video/mp4">
+                <source src="assets/Point Pelee National Park.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+
+            <h3>Things to do</h3>
+            <p>Whether you love to hike a wooded trail, photograph a stunning sunset, glimpse rare bird species during spring and fall migration, paddle a canoe through a wetland brimming with life, picnic on a sandy beach, be dazzled by a kaleidoscope of dragon flies, blue jays and birds of prey or crunch through the pristine snow of a wintry landscape – Point Pelee National Park has it all in every season.</p>
+            <h3>Nature and science</h3>
+
+
+            <p>Located 50 km (30 miles) south-east of Windsor, Ontario, Point Pelee National Park of Canada is one of Canada's smallest national parks, and yet this tiny green oasis attracts approximately 300,000 visitors each year.</p>
+
+
+            <p>Point Pelee brings people and the environment together. From picnic areas to the Visitor Centre, to famous vistas like the Tip and the Marsh Boardwalk, all facilities and services are designed to ensure a memorable experience and to preserve the Park's natural environment.</p>
+            <h3>Park management</h3>
+            <p>Point Pelee National Park is your doorway into a world of natural wonders. From your first step into the park you’ll be amazed by a diversity of habitats, from the sheltered canopy of the southern Carolinian forest to the expansive sea of cattails in the marsh. Listen for the sweet songs of migratory birds that briefly stop in spring on their way to northern breeding grounds. Glide through the marshlands in a canoe, paddling silently past turtles basking in the sun or wander barefoot on a sandy beach, enjoying the sun and warm water. In autumn, the migration returns with songbirds darting quickly in and out of vegetation, while dragonflies and Monarch butterflies drift by. In winter, Point Pelee offers quiet beauty and solitude as you enjoy hiking, snowshoeing or cross-country skiing.</p>
+            <h2>Park Location on Google Maps</h2>
+            <!-- This code add google mpas of the loction -->
+            <div id="map">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initPeleeMap">
+            </script>
+            </div>
+            <address>
+                <p>Location</p>
+                <p>1118 Point Pelee Drive<br />Leamington ON N8H 3V4</p>
+            </address>
+
+            <div class="total-review">
+                <h2>Visitor Reviews</h2>
+                <span class="heading">4.7 out of 5</span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+
+                <div class="row">
+                    <div class="side">
+                        <div>5 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-5"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>2200</div>
+                    </div>
+                    <div class="side">
+                        <div>4 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-4"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>203</div>
+                    </div>
+                    <div class="side">
+                        <div>3 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-3"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>15</div>
+                    </div>
+                    <div class="side">
+                        <div>2 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-2"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>4</div>
+                    </div>
+                    <div class="side">
+                        <div>1 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-1"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>8</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="indi-review">
+                <h4>Reviews</h4>
+                <span class="heading1">Andrew White</span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <p>Visited Point Pelee National Park in Canada this past weekend and it was an amazing experience. I have been to a lot of places along Lake Erie and this my favorite. First everywhere you turned there was a monarch butterfly you can Take a beach walk lasting hours! The Park is pristine, the Canadians take conservation and the environment seriously. The park is one of the most diverse ecosystems in North America! You can see a limitless body of water in four directions, while never leaving the mainland! Plus there is so much to do!</p>
+                <span class="heading1">Kiirsti Owen</span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <p>The best place to visit in Southern Ontario. A haven for birds and other wildlife. Every time I go it's a little different. Even in the winter when there are fewer birds, it's a cool place to wander and see the ice on the lake.</p>
+                <span class="heading1">Greg Simpson</span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <p>Point Pelee is probably the best place for out of towner’s to visit they the come down to the Essex country area! Great place for a bike ride, hike, kayak, or even just a cruise down in the car. Lots of wildlife and picturesque views all over the park! They even have a great shuttle service that brings you somewhat close to the very most southern point of Canada. I would also highly recommend the boardwalk!
+            </div>
+        </div>
+    </div>
+    <!-- This is the section of footer, which style defined in the css -->
+    <div class="footer">
+        <footer>
+            <!-- This code makes a contact infor box in the footer section on each pages-->
+            <h1 class="footer-title"><b>Contact Information</b></h1>
+            <p>
+                Jiuwei Wang <a href="mailto:wangj160@mcmaster.ca">wangj160@mcmaster.ca</a>,
+                Vanessa Truong <a href="mailto:truonv1@mcmaster.ca">truonv1@mcmaster.ca</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

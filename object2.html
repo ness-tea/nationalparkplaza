@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>National Park Plaza</title>
+
+    <!--- Google fonts --->
+    <link href="https://fonts.googleapis.com/css?family=Forum|Julius+Sans+One|Lateef|Open+Sans&display=swap" rel="stylesheet">
+
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link rel="icon" href="assets/header-ico.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="scripts/js/parkMap.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="title">NATIONAL PARK PLAZA</h1>
+
+        <ul>
+            <li><a href="index.html">Search</a></li>
+            <li><a href="results.html">Parks</a></li>
+            <li class="dropdown">
+                <a class="active" href="javascript:void(0)" class="dropbtn">National Parks</a>
+                <div class="dropdown-content">
+                    <a href="object1.html">Bruce Peninsula National Park</a>
+                    <a class="active" href="object2.html">Georgian Bay Islands National Park</a>
+                    <a href="object3.html">Point Pelee National Park</a>
+                </div>
+            </li>
+            <li><a href="object_submission.html">Submit a Park</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="login.html">LogIn</a></li>
+        </ul>
+    </div>
+
+    <div class="wrap-object">
+        <div class="object" id="indent">
+            <h1>GEORGIAN BAY ISLANDS NATIONAL PARK</h1>
+            <p>
+                <a href="write_review.html" class="buttonReview">Write an review</a>
+            </p>
+            <h2>General Park Information</h2>
+            <p>Welcome to the world’s largest freshwater archipelago—home to a boat-access nature preserve situated where the windswept white pines and granite shores of the Canadian Shield turn to dense deciduous woodland. Here, adventure is easy. Cycle wooded trails, overnight at secluded campsites or waterfront cabins and hike to viewpoints atop emerald shoreline. The landscape of Georgian Bay Islands National Park inspired the Group of Seven. Let it inspire you.</p>
+            <video width="480" height="400" controls>
+                <source src="assets/Georgian Bay Islands National Park.mp4" type="video/mp4">
+                <source src="assets/Georgian Bay Islands National Park.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+
+            <h3>Things to do</h3>
+            <p>Georgian Bay Islands National Park welcomes travellers to its scenic shores. Cyclists tour meandering bike paths and hikers discover secluded lakeside vistas. Romantics escape to rustic cabins at Christian Beach. Families bond and create memories at waterfront Cedar Springs Cabins. And all guests can appreciate the islands’ natural and cultural treasures via easy day-trips.</p>
+            <h3>Discover</h3>
+
+            <h4>Natural heritage</h4>
+            <p>Lying on the edge of the Canadian Shield, the Park islands are home to both northern and southern species of plants and animals. This "edge effect" is evident in the Park landscape. The barren, glacier-scraped rock and windswept pines that fired the imagination of the Group of Seven artists dominate the northern islands and northern Beausoleil Island. Southern Beausoleil, with its thicker soils and rich hardwood forests is very different.</p>
+
+            <h4>Cultural heritage</h4>
+            <p>While hiking the trails of Georgian Bay Islands National Park, the visitor with a keen eye and vivid imagination is awestruck by the vast stretches of time taken to shape the natural history of the park. What appears to be only a hill may actually be a glacial deposit or a shoreline dating back thousands of years, and the exposed Canadian Shield rock that is today so familiar to park visitors was in fact formed many millions of years ago.</p>
+
+
+            <h3>Park management</h3>
+            <p>Georgian Bay Islands National Park protects 63 islands within Earth’s largest freshwater archipelago, stretching for 50 kilometres along eastern Georgian Bay. Eight-kilometre-long Beausoleil Island is the main island, a 15-minute boat-ride from Honey Harbour, and the hub of visitor activity.</p>
+            <p>This island park harbours incredible biodiversity. Windswept pines and Precambrian granite of the Canadian Shield transition to forests of sugar maple and smooth-barked beech, punctuated by occasional conifers. Birdlife from raptors to songbirds fly above, small mammals scamper through forest undergrowth and this national park protects a greater variety of reptiles and amphibians than any other in Canada. Cultural roots run deep, reaching back through 5,500 years of human history.</p>
+            <p>Guests hike more than dozen marked paths, cycle scenic trails, swim from sandy or stony shores, ply remote waters via paddle or powerboat and unwind at campsites and cabins overlooking a vast and serene Great Lakes shoreline.</p>
+            <h2>Park Location on Google Maps</h2>
+            <!-- This code add google mpas of the loction -->
+            <div id="map">
+
+                
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initGeorgianMap"></script>
+            </div>
+            <address>
+                <p>Administration office</p>
+                <p>901 Wye Valley Rd Box 9<br />Midland ON L4R 4K6</p>
+            </address>
+
+            <div class="total-review">
+                <h2>Visitor Reviews</h2>
+                <span class="heading">4.7 out of 5</span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+                <span style=font-size:200% class="fa fa-star checked"></span>
+
+                <div class="row">
+                    <div class="side">
+                        <div>5 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-5"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>500</div>
+                    </div>
+                    <div class="side">
+                        <div>4 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-4"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>43</div>
+                    </div>
+                    <div class="side">
+                        <div>3 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-3"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>15</div>
+                    </div>
+                    <div class="side">
+                        <div>2 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-2"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>4</div>
+                    </div>
+                    <div class="side">
+                        <div>1 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-1"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>8</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="indi-review">
+                <h4>Reviews</h4>
+                <span class="heading1">Ronny Chu</span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <p>Clean and well maintained park. Staff here are super friendly! From the time we pulled into the parking lot we were greeted and taken care of. The ferry ride was lots of fun for the kids. We even got to learn about snakes and hold one while we were on the island. Our time here was very pleasant.</p>
+                <span class="heading1">Bonnie Rideout</span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star"></span>
+                <p>Beautiful trails. Staff were great. Nothing special tho. I'm glad I went but I likely won't go again, you can see the same scenery without playing for the boat on the mainland. There were also a lot of people.</p>
+                <span class="heading1">Danielle Proulx</span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <span style=font-size:100% class="fa fa-star checked"></span>
+                <p>Beautiful well maintained park. The island offers a great diversity of camping sites from forested to rocky Canadian Shield. Tent platforms and washrooms all in good condition. Trails are well marked.</p>
+            </div>
+        </div>
+    </div>
+    <!-- This is the section of footer, which style defined in the css -->
+    <div class="footer">
+        <footer>
+            <!-- This code makes a contact infor box in the footer section on each pages-->
+            <h1 class="footer-title"><b>Contact Information</b></h1>
+            <p>
+                Jiuwei Wang <a href="mailto:wangj160@mcmaster.ca">wangj160@mcmaster.ca</a>,
+                Vanessa Truong <a href="mailto:truonv1@mcmaster.ca">truonv1@mcmaster.ca</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

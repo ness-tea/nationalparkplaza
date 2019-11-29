@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>National Park Plaza</title>
+
+    <!-- Linking google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Forum|Julius+Sans+One|Lateef|Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- Linking the css stylesheet to style html elements -->
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+
+    <!-- Linking favicon png -->
+    <link rel="icon" href="assets/header-ico.png">
+
+    <script src="scripts/js/validation.js"></script> 
+</head>
+
+<body>
+    <!-- Header and nav bar layout - used uniformly across all webpages -->
+    <div class="header">
+        <h1 class="title">NATIONAL PARK PLAZA</h1>
+
+        <!-- Nav bar links in unlisted list -->
+        <ul>
+            <li><a href="index.html">Search</a></li>
+            <li><a href="results.html">Parks</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">National Parks</a>
+                <div class="dropdown-content">
+                    <a href="object1.html">Bruce Peninsula National Park</a>
+                    <a href="object2.html">Georgian Bay Islands National Park</a>
+                    <a href="object3.html">Point Pelee National Park</a>
+                </div>
+            </li>
+            <li><a href="object_submission.html">Submit a Park</a></li>
+            <!-- Marking registration tab as active for specific styling elements -->
+            <li><a class="active" href="registration.html">Registration</a></li>
+            <li><a href="login.html">LogIn</a></li>
+        </ul>
+    </div>
+
+    <!-- Wrapper for registration page content -->
+    <div class="wrap-register">
+        <!-- Applying indent css styling -->
+        <div id="indent"></div>
+
+        <!-- Registration page content -->
+        <div class="register-content">
+            <h1>Register an Account</h1>
+            Sign up and explore National Parks in your area today!
+            <br>
+            <br>
+            <!-- Form tag for submitting user name, birth date, email and account password, as well as the submit/reset buttons -->
+            <div class="register-form"  >
+
+                <!-- Call validateRegistration on submit input -->
+                <form action="registration.php" name="register" onsubmit="return validateRegistration()" method="post">
+                    <p>Full Name:</p>
+                    <input type="text" placeholder="Enter your name" id="fullname" name="fullname">
+                    
+                    <br>
+                    <p>Birth Date:</p>
+                    <input style="font-family: sans-serif;color:gray" type="date" id="birthday" name="birthday">
+
+                    <br>    
+                    <p>Email:</p>
+                    <input type="email" id="email" name="email">
+
+                    <br>
+                    <p>Account password:</p>
+                    <input type="password" id="pass" name="pass">
+                    <br>
+                    <br>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+
+                </form>
+            </div>
+        </div>
+        <br/><br/><br/>
+    </div>
+
+    <!-- Footer layout for Contact Information -->
+    <div class="footer">
+        <footer>
+            <h1 class="footer-title"><b>Contact Information</b></h1>
+            <p>
+                Jiuwei Wang <a href="mailto:wangj160@mcmaster.ca">wangj160@mcmaster.ca</a>,
+                Vanessa Truong <a href="mailto:truonv1@mcmaster.ca">truonv1@mcmaster.ca</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
