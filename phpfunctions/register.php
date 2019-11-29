@@ -17,7 +17,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Prepare SQL and bind parameters for preventing malicious attacks/injections
-    if ("SELECT COUNT(*) FROM Users WHERE email = $email" == 0)
+    if ("SELECT COUNT(*) FROM Users WHERE email = '$email'" == 0)
     {
         $query = "INSERT INTO Users (fullname, birthdate, email, pw) 
                 VALUES (:fullname, :birthdate, :email, :pass)";
