@@ -10,34 +10,34 @@ try {
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
     
-    // SQL Create User table
-    $sql1 = "CREATE TABLE Users (
+    // SQL Create Users table
+    $createUsers = "CREATE TABLE Users (
         user_id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         fullname VARCHAR(50) NOT NULL,
         birthdate VARCHAR(30) NOT NULL,
         email VARCHAR(50) NOT NULL,
-        password VARCHAR(30) NOT NULL,
+        pw VARCHAR(30) NOT NULL,
         reg_date TIMESTAMP
         )";   
-    $conn->exec($sql1);
+    $conn->exec($createUsers);
 
     echo "Users Table created successfully";
 
     // SQL Create Park table
-    $sql2 = "CREATE TABLE Parks (
+    $createParks = "CREATE TABLE Parks (
         park_id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         parkname VARCHAR(100) NOT NULL,
-        description VARCHAR(500) NOT NULL,
+        dsc VARCHAR(500) NOT NULL,      
         longitude VARCHAR(50) NOT NULL,
         latitude VARCHAR(50) NOT NULL,
         sub_date TIMESTAMP
         )";
-     $conn->exec($sql2);
+     $conn->exec($createParks);
 
      echo "Park Table created successfully";
 
      // SQL Create Review table;
-     $sql3 = "CREATE TABLE Reviews (
+     $createReviews = "CREATE TABLE Reviews (
         reviews_id INT(16) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         email VARCHAR(50) NOT NULL,
         parkname VARCHAR(100) NOT NULL,
@@ -45,7 +45,7 @@ try {
         review VARCHAR(300),
         rev_date TIMESTAMP
         )";
-    $conn->exec($sql3);
+    $conn->exec($createReviews);
 
     echo "Review Table created successfully";
     }
