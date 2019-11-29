@@ -1,7 +1,7 @@
 # National Park Plaza
 #### 4WWC3 Web Project
 
-**https://nationalparkplaza.ga/**
+URL: **https://nationalparkplaza.ga/**
 
 The term project for 4WW3 (Web Systems and Computing). 
 
@@ -20,7 +20,7 @@ The National Park Plaza site allows users to do the following:
 The following are answers to the inquiries needed for **Add-on Task 2**.
 
 ## Add-on Task 2 
-### (Part i) 
+### Part (i) 
 The <picture> tag was incorporated in the sample object page, 'Bruce Peninsula National Park' under the 'National Parks' tab. There is an acorn logo at the top-right
 corner of the webpage that will alternate between resizings as follows:
 - 2 acorns (assets/acorn_2.jpg) when min-width is 800px
