@@ -17,12 +17,9 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Prepare SQL and bind parameters for preventing malicious attacks/injections
-    
-    if (!$stmt = $conn->prepare("INSERT INTO Users (fullname, birthdate, email, pw) 
-                            VALUES (:fullname, :birthdate, :email, :pass)"))  
-                            {
-                                echo "Prepare failed";
-                            }
+    $query = "INSERT INTO Users (fullname, birthdate, email, pw) 
+            VALUES (:fullname, :birthdate, :email, :pass)";
+    $stmt = $conn->prepare($query);
     $stmt->execute(array(':fullname'=> $fullname, ':birthdate'=> $birthdate, ':email'=> $email, ':pass'=> $pass));
     
     echo "User added successfully";
