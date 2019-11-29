@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<?php include_once 'header.php' ?>
+<? include('header.php') ?>
 
 <body>
     <!-- This is the header, which style defined in the css -->
