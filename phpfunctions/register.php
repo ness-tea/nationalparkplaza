@@ -18,7 +18,7 @@ try {
     
     // Prepare SQL and bind parameters for preventing malicious attacks/injections
     
-    if (!$stmt = $conn->prepare("INSERT INTO Users (fullname, birthdate, email, pass) 
+    if (!$stmt = $conn->prepare("INSERT INTO Users (fullname, birthdate, email, pw) 
                             VALUES (:fullname, :birthdate, :email, :pass)"))  
                             {
                                 echo "Prepare failed";
