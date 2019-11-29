@@ -18,7 +18,7 @@ try {
     
     $query = "INSERT INTO Users (fullname, birthdate, email, password) 
             VALUES ('$fullname', '$birthdate', '$email', '$pass') 
-            WHERE NOT EXISTS (SELECT email FROM Users WHERE email = '$email' LIMIT 1)";  
+            WHERE NOT EXISTS (SELECT email FROM Users WHERE email = '$email')";  
 
     $conn->exec($query);
     
