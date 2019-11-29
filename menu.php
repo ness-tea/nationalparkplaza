@@ -1,6 +1,5 @@
 <?php
-
-        <ul>
+echo "<ul>
             <div class="header-left">
                 <li><a class="active" href="index.php">Search</a></li>
                 <li><a href="review.php">Write Review</a></li>
@@ -12,5 +11,5 @@
             </div>
         </ul>
         <h1 class="title">NATIONAL PARK PLAZA</h1>
-
+"
 ?>
