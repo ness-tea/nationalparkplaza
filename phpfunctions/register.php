@@ -16,14 +16,10 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $query = "INSERT INTO Users (fullname, birthdate, email, password) VALUES (:fullname, :birthdate, :email, :password)";  
+    $query = "INSERT INTO Users (fullname, birthdate, email, password) VALUES (:fn, :bd, :em, :pw)";  
 
     $stmt = $conn->prepare($query);
-    $stmt -> bindParam(':fullname', $fullname);
-    $stmt -> bindParam(':birthdate', $birthdate);
-    $stmt -> bindParam(':email', $email);
-    $stmt -> bindParam(':pass',$pass);
-    $stmt -> exec();
+    $stmt -> exec(':fn' => $fullname, ':bd' => $birthdate, ':em' => $email, ':pw' => $pass);
     
     echo "User added successfully";
 }
