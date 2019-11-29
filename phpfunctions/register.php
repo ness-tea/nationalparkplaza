@@ -14,11 +14,11 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $sql = "INSERT INTO Users (fullname, birthdate, email, password) 
-            VALUES ('$fullname', '$birthdate', '$email', '$pass') 
-            WHERE NOT EXISTS (SELECT email FROM Users WHERE email = '$email' LIMIT 1)";  
+    $query_register = "INSERT INTO Users (fullname, birthdate, email, password) 
+                       VALUES ('$fullname', '$birthdate', '$email', '$pass') 
+                       WHERE NOT EXISTS (SELECT email FROM Users WHERE email = '$email' LIMIT 1)";  
     
-    $conn->exec($sql);
+    $conn->exec($query_register);
     
     echo "User added successfully";
 }
