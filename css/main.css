@@ -90,12 +90,12 @@ ul {
 
 }
 
-.register-button {
+li.register-button {
     border: 1px solid #bbb;
 } 
 
 /* Make list objects in-line and style border properties */
-li.register {
+li {
     width: 140px;
     display: inline-block;
 }
