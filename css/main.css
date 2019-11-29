@@ -33,7 +33,7 @@ h1 {
     padding-bottom: 2%;
     background-color: black;
     background-size: cover;
-    padding: 0% 5%
+    padding: 1% 5%
 }
 
 .header-left {
@@ -95,7 +95,7 @@ ul {
 } 
 
 /* Make list objects in-line and style border properties */
-li {
+li.register {
     width: 140px;
     display: inline-block;
 }
