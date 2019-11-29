@@ -20,8 +20,8 @@
         <ul>
             <div class="header-left">
                 <li><a href="index.php">Search</a></li>
-                <li><a href="review.php">Write a Review</a></li>
-                <li><a href="submit.php">Submit a Park</a></li>
+                <li><a href="review.php">Write Review</a></li>
+                <li><a href="submit.php">Submit Park</a></li>
             </div>
             <div class="header-right">
                 <li><a href="login.php">Login</a></li>
