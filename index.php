@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 
 <?php include('header.php'); ?>
-
-<body>
-    <!-- This is the header, which style defined in the css -->
-    <div class="header">
-        <?php include('menu.php'); ?>
-    </div>
-
-    <hr class="divider">
+<?php include('menu.php'); ?>
 
     <!-- This is the section of search page body, which style defined in the css -->
     <div class="wrap-search">
