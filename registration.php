@@ -19,7 +19,7 @@
             <div class="register-form"  >
 
                 <!-- Call validateRegistration on submit input -->
-                <form action="phpfunctions/register.php" name="register" onsubmit="return validateRegistration()" method="post">
+                <form action="phpfunctions/signin.php" name="register" onsubmit="return validateRegistration()" method="post">
 
                     <p>Full Name:</p>
                     <input type="text" placeholder="Enter your name" id="fullname" name="fullname">
@@ -39,7 +39,7 @@
                     <br>
                     <br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" name="btnRegister" value="Submit">
                     <input type="reset" value="Reset">
                     <br>
                     <p style="font-size: 1em">Already a user? <a href="login.php"><b>Log In</b></a></p>
