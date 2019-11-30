@@ -22,18 +22,19 @@ try
         $stmt->execute(array($email, $pass));
 
         // Check if there is the user's entry in the table - meaning that user does exist
-        if ($stmt->fetchColumn() > 0)
+        if ($stmt->fetchColumn() == 1)
         {
-            // Setting the session to the returned user ID.
-            $_SESSION['user_id'] = $rows[0]['ID'];
+            echo "Log in successful";
+            // // Setting the session to the returned user ID.
+            // $_SESSION['user_id'] = $rows[0]['ID'];
             
-            // Redirect to table of users.
-            header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+            // // Redirect to table of users.
+            // header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
         } else {
             header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
         }
 
-        echo "Log in successful";
+ 
 
     } else {
         // This path is dependent on where the root of your documents is located.
