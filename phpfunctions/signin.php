@@ -23,7 +23,7 @@ try
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
 
-    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+    // $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $rowCount = $stmt->rowCount();
 
