@@ -10,13 +10,16 @@ $dbname = "nationalparkplaza";
 $email = $_POST['email'];
 $pass = md5($_POST['pass']);
 
-    // $conn = new PDO("mysql:host=$servername; dbname=$dbname", $username, $password);
-    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try 
+{   
+    // Connect to the SQL databse using PDO
+    $conn = new PDO("mysql:host=$servername; dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query we are using to check if the user exists in database
-    // $query = "SELECT COUNT(email) FROM Users WHERE email = ?";
-    // $stmt = $conn->prepare($query);
-    // $stmt->execute(array($email));
+    $query = "SELECT COUNT(email) FROM Users WHERE email = ? AND pw = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->execute(array($email, $pass));
 
     // // Check if there is the user's entry in the table - meaning that user does exist
     // if ($stmt->fetchColumn() == 1)
@@ -32,5 +35,12 @@ $pass = md5($_POST['pass']);
     //     // header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
     // }
 
+}
+catch(PDOException $e)
+{
+    echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
 
 ?>
