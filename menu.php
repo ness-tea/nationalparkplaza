@@ -14,7 +14,6 @@
             </div>
         </ul>
         <h1 class="title">NATIONAL PARK PLAZA</h1> 
-        <h3 class="title2">EXPERIENCE THE BEAUTY OF CANADA</h3>
     </div>
 
     <hr class="divider">

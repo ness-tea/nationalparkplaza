@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <?php include('header.php'); ?>
+<?php include('menu.php'); ?>
 
     <!-- This is the section of results page body, which style defined in the css -->
     <div class="wrap-results">
