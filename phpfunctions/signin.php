@@ -1,5 +1,7 @@
 <?php 
     
+session_start();
+
 // Database access credentials
 $servername = "nationalparkplazadb.cjpr4ybdu2p3.us-east-2.rds.amazonaws.com";
 $username = "truonv1";
@@ -26,21 +28,21 @@ try
     $rowCount = $stmt->rowCount();
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if ($rowCount == 0 || $pass == $data['pw'])
+    if ($rowCount == 1 || !empty($data))
     {
-        // Usesr does not exist
+        // User exists
+        echo "Login successful";
+        $_SESSION['user_id'] = $data['user_id'];
+        
+        header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+    } 
+    else 
+    {
+        // User does not exist
         echo "Login unsuccessful";
         
         // Redirect to table of users.
         header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
-    } 
-    else 
-    {
-        // User exists
-        echo "Login successful";
-        $_SESSION['email'] = $data['email'];
-        
-        header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
     }0
 
 }
