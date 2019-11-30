@@ -17,12 +17,12 @@ try
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query we are using to check if the user exists in database
-    $query = "SELECT COUNT(? AND ?) From Users";
+    $query = "SELECT * FROM Users WHERE email=? AND pw=?";
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email, $pass));
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if ($stmt->fetchColumn() == 1)
+    if (count($stmt->fetchAll()) == 1)
     {
         echo "Log in successful";
         // Setting the session to the returned user ID.
