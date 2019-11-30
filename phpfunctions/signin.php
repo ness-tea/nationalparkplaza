@@ -20,10 +20,10 @@ try {
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
 
-    // $data = $stmt->fetch(PDO::FETCH_ASSOC);
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if ($stmt->fetchColumn() == 0)
+    if ($stmt->fetchColumn() == 0 || empty($data))
     {
         // User does not exist
         echo "Login unsuccessful";
