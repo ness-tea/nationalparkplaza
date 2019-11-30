@@ -17,7 +17,7 @@ try
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query we are using to check if the user exists in database
-    $query = "SELECT COUNT(? AND ?)";
+    $query = "SELECT COUNT(? AND ?) From Users";
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email, $pass));
 
@@ -34,7 +34,7 @@ try
     else 
     {
         echo "Login not successful";
-        // header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
+        header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
     }
 
 }
