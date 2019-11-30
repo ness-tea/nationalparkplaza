@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
 
-<?php sessioni_start(); ?>
-<?php include('header.php'); ?>
-<?php include('menu.php'); ?>
+<?php 
+    include('header.php');
+    include('menu.php'); 
+?>
 
     <!-- Wrapper for registration page content -->
     <div class="wrap-register">

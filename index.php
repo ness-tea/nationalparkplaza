@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 
 <?php 
-
-include('header.php');
-include('menu.php');
-
+    include('header.php');
+    include('menu.php');
 ?>
     <!-- This is the section of search page body, which style defined in the css -->
     <div class="wrap-search">
