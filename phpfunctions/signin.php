@@ -18,7 +18,7 @@ try {
     // Query to check if there are any existing users with the same email first
     $query = "SELECT COUNT(email) FROM Users WHERE email = ?";
     $stmt = $conn->prepare($query);
-    $stmt->execute(array($email, $pass));
+    $stmt->execute(array($email));
 
     // // Check if there is the user's entry in the table - meaning that user does exist
     if ($stmt->fetchColumn() == 0)
