@@ -28,6 +28,11 @@ h1 {
     margin-bottom: 0%;
 }
 
+h4 {
+    color: white;
+    font-family: 'Forum', cursive;
+}
+
 /* Website header styling */
 .header {
     padding: 2% 5%;

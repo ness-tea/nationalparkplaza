@@ -7,8 +7,9 @@
     <footer>
         <!-- This code makes a contact infor box in the footer section on each pages-->
         <h1 class="footer-title"><b>Contact Information</b></h1>
+        <h4>Vanessa Truong</h4>
         <p>
-            Vanessa Truong <a href="mailto:truonv1@mcmaster.ca">truonv1@mcmaster.ca</a>
+            <a href="mailto:truonv1@mcmaster.ca">truonv1@mcmaster.ca</a>
         </p>
     </footer>
 </div>
