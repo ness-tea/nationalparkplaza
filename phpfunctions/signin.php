@@ -22,18 +22,20 @@ try
     $stmt->execute(array($email, $pass));
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    // if ($stmt->fetchColumn() == 1)
-    // {
+    if ($stmt->fetchColumn() == 1)
+    {
         echo "Log in successful";
-        // // Setting the session to the returned user ID.
-        // $_SESSION['user_id'] = $rows[0]['ID'];
+        // Setting the session to the returned user ID.
+        $_SESSION['user_id'] = $rows[0]['ID'];
         
-        // // Redirect to table of users.
-        // header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
-    // } else {
-    //     echo "Login not successful";
-    //     // header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
-    // }
+        // Redirect to table of users.
+        header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+    } 
+    else 
+    {
+        echo "Login not successful";
+        // header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
+    }
 
 }
 catch(PDOException $e)
