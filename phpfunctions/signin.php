@@ -16,11 +16,9 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query to check if there are any existing users with the same email first
-    $query = "SELECT COUNT(email) FROM Users WHERE email = ?";
+    $query = "SELECT COUNT(email) FROM Users WHERE email = ? and pw = ?";
     $stmt = $conn->prepare($query);
-    $stmt->execute(array($email));
-
-    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->execute(array($email, $pass));
 
     // // Check if there is the user's entry in the table - meaning that user does exist
     if ($stmt->fetchColumn() == 0)
@@ -33,18 +31,11 @@ try {
     } 
     else 
     {
-        if ($pass == $data['pw'])
-        {
-            // User exists
-            echo "Login successful";
-            $_SESSION['user_id'] = $data['user_id'];
-            
-            header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
-        }
-        else{
-            echo "user exists but pw is wrong";
-        }
-
+        // User exists
+        echo "Login successful";
+        $_SESSION['user_id'] = $data['user_id'];
+        
+        header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
     }
 
 }
