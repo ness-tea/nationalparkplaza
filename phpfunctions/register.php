@@ -17,25 +17,23 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Query to check if there are any existing users with the same email first
-    $query = "SELECT COUNT(*) FROM Users WHERE email = :email";
+    $query = "SELECT COUNT(*) FROM Users WHERE email = ?";
     $stmt = $conn->prepare($query);
+    $stmt->execute(array($email)))
     
-    if ($result = $stmt->execute(array(':email'=> $email)))
+    // Check if the query returned no existing users - then we can add the account to the database
+    if ($stmt->rowCount() == 0)
     {
-        // Check if the query returned no existing users - then we can add the account to the database
-        if ($result->fetchColumn() == 0)
-        {
-            $query = "INSERT INTO Users (fullname, birthdate, email, pw) 
-                    VALUES (:fullname, :birthdate, :email, :pass)";
-            $stmt = $conn->prepare($query);
-            $stmt->execute(array(':fullname'=> $fullname, ':birthdate'=> $birthdate, ':email'=> $email, ':pass'=> $pass));
-        
-            echo "User added successfully";
-        }
-        else
-        {
-            echo "User already exists";
-        }
+        $query = "INSERT INTO Users (fullname, birthdate, email, pw) 
+                VALUES (:fullname, :birthdate, :email, :pass)";
+        $stmt = $conn->prepare($query);
+        $stmt->execute(array(':fullname'=> $fullname, ':birthdate'=> $birthdate, ':email'=> $email, ':pass'=> $pass));
+    
+        echo "User added successfully";
+    }
+    else
+    {
+        echo "User already exists";
     }
 }
 catch(PDOException $e)
