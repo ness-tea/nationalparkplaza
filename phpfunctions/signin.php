@@ -17,7 +17,7 @@ try
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query we are using to check if the user exists in database
-    $query = "SELECT COUNT(email) FROM Users WHERE email = ? AND pw = ?";
+    $query = "SELECT COUNT(? AND ?)";
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email, $pass));
 
