@@ -54,6 +54,15 @@ h1 {
     letter-spacing: 0.5em;
     color: white;
     margin-top: 0;
+}
+
+.title2 {
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    font-weight:;
+    letter-spacing: 0.2em;
+    color: white;
     padding-top: 7%;
 }
 

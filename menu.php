@@ -14,7 +14,7 @@
             </div>
         </ul>
         <h1 class="title">NATIONAL PARK PLAZA</h1> 
-        <h2 style="font-size: 30px; color: white;">EXPERIENCE THE BEAUTY OF CANADA</h2>
+        <h3 class="title2">EXPERIENCE THE BEAUTY OF CANADA</h3>
     </div>
 
     <hr class="divider">
