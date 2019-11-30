@@ -22,7 +22,7 @@ try {
     $stmt->execute(array($email));
 
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    print_r($data);
+    print_r($data[0]['pass']);
 
     // // // Check if there is the user's entry in the table - meaning that user does exist
     // if ($stmt->rowCount() == 0 )
