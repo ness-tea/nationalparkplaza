@@ -230,7 +230,7 @@ li.dropdown {
 
 /*make the class indent locate at top bottom padding 2%, left right padding 20% */
 #indent {
-    padding: 2% 10%;
+    padding: 2% 15%;
 }
 
 /* If content overflows an submit-park box, a scroll-bar is added to see the rest of the content */
