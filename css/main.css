@@ -234,7 +234,7 @@ li.dropdown {
 }
 
 /* If content overflows an submit-park box, a scroll-bar is added to see the rest of the content */
-.submit-park {
+.submit-park, .profile-content {
     overflow: scroll;
     margin-bottom: 40px;
     height: 450px;

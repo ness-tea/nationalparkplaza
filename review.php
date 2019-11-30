@@ -13,11 +13,11 @@
         <!-- Content-specific definition -->
         <div class="submit-content">
             <h1>Write a Review</h1>
-
+            <br/>
             <div class="submit-park">
 
                 <!-- Submit attributes -->
-                <form name="submitPark" enctype="multipart/form-data" action="/action_page.php" method="post">
+                <form name="submitPark" enctype="multipart/form-data" action="/reviews.php" method="post">
 
                     <!-- Step 1) Enter the park to be submitted -->
                     <p>Name of Park:</p>
