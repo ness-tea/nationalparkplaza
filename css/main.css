@@ -193,26 +193,15 @@ li.dropdown {
     position: relative;
 }
 
-/* Styling the search form on search page */
-.search-content {
-    padding: 2% 4%;
-    margin: 0 30%;
-    width: 35%;
-    background-color: white;
-    padding-bottom: 2%;
+.wrap-profile {
+    background-image: url("../assets/profile-bg.jpg");
+    background-size: cover;
+    min-height: 100%;
+    position: relative;
 }
 
-/* Styling the register form on register page */
-.register-content {
-    padding: 2% 4%;
-    margin: 0 30%;
-    width: 35%;
-    background-color: white;
-    padding-bottom: 2%;
-}
-
-/* Styling the register form on register page */
-.login-content {
+/* Styling the register and login form on register page */
+.register-content, .login-content, .search-content, .profile-content {
     padding: 2% 4%;
     margin: 0 30%;
     width: 35%;
