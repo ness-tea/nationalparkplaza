@@ -17,9 +17,10 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Query to check if there are any existing users with the same email first
-    $query = "SELECT COUNT(*) FROM Users WHERE email = `$email`";
-
-    if ($res = $conn->query($query))
+    $query = "SELECT COUNT(*) FROM Users WHERE email = :email";
+    $stmt = $conn->prepare($query);
+    
+    if ($result = $stmt->execute(array(':email'=> $email)))
     {
         // Check if the query returned no existing users - then we can add the account to the database
         if ($result->fetchColumn() == 0)
