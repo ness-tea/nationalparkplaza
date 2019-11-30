@@ -21,8 +21,8 @@ $sess_status = $_SESSION['loggedin'];
         <ul>
             <div class="header-left">
                 <li><a class="<?php echo $current_page == 'index.php' ? 'active':NULL ?>" href="index.php">Search</a></li>
-                <li><a class="<?php echo $current_page == 'review.php' ? 'active':NULL ?>" href="<?php echo $sess_status == true ? 'review.php':'login.php' ?>">Write Review</a></li>
-                <li><a class="<?php echo $current_page == 'submit.php' ? 'active':NULL ?>" href="<?php echo $sess_status == true ? 'submit.php':'login.php' ?>">Submit Park</a></li>
+                <li><a class="<?php echo $current_page == 'submitreview.php' ? 'active':NULL ?>" href="<?php echo $sess_status == true ? 'submitreview.php':'login.php' ?>">Write Review</a></li>
+                <li><a class="<?php echo $current_page == 'submitpark.php' ? 'active':NULL ?>" href="<?php echo $sess_status == true ? 'submitpark.php':'login.php' ?>">Submit Park</a></li>
             </div>
             <div class="header-right">
                 <li><a class="<?php echo $current_page == 'login.php' ? 'active':NULL ?>" 

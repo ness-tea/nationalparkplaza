@@ -17,7 +17,7 @@
         <p>If you've come across a park that is not currently on this website, please feel free to add it!</p>
 
         <!-- Submit attributes -->
-        <form name="submitpark" enctype="multipart/form-data" action="phpfunctions/submitpark.php" method="post">
+        <form name="submitpark" enctype="multipart/form-data" action="phpfunctions/submit.php" method="post">
 
             <!-- Step 1) Enter the park to be submitted -->
             <p>Name of Park:</p>

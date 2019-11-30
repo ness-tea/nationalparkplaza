@@ -22,12 +22,13 @@ try {
     $stmt = $conn->prepare($query);
     $stmt->execute(array($pname));
 
-    // Case for handling Park submission
+    // User is doing a Park submission
     if (isset($_POST['submitpark']))
     {   
-        // Check if there aren't any 
+        // Check if the park doesn't already exist in the database
         if ($stmt->fetchColumn() == 0)
         {
+            // Park doesn't exist - add the user's park to the database
             $query = "INSERT INTO Parks (parkname, dsc, longitude, latitude) 
                     VALUES (:parkname, :dsc, :longitude, :latitude)";
             $stmt = $conn->prepare($query);
@@ -47,11 +48,13 @@ try {
         }
     }
 
-    // Case for handling Review submission
+    // User is doing a Review Submission
     else if (isset($_POST['submitreview']))
     {
+        // Check if the park exists in the database.
         if ($stmt->fetchColumn() == 1)
         {
+            // The park exists. We can add the user's review to the database.
             $query = "INSERT INTO Reviews (email, parkname, rating, review)
                     VALUES (:email, :parkname, :rating, :review)";   
             $stmt = $conn->prepare($query);

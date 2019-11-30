@@ -17,14 +17,14 @@
             <div class="submit-park">
 
                 <!-- Submit attributes -->
-                <form action="phpfunctions/submitreview.php" name="submitreview" enctype="multipart/form-data" method="post">
+                <form action="phpfunctions/submit.php" name="submitreview" enctype="multipart/form-data" method="post">
 
                     <!-- Step 1) Enter the park to be submitted -->
                     <p>Name of Park:</p>
 
                     <!-- HTML validation - required specified for name field-->
                     <!-- Max length of park name input is set to 50 characters -->
-                    <input required type="text" placeholder="Type a Park name" name="sname" maxlength="50">
+                    <input required type="text" placeholder="Type a Park name" id="parkname" name="parkname" maxlength="50">
                     <br>
                     <span style="font-size: 0.8em">
                         Enter the name of the park. E.g. Bruce Peninsula National Park
@@ -32,7 +32,7 @@
                     <br><br>
                     Rating:
                     <br>
-                    <select required name="rating">
+                    <select required id="rating" name="rating">
                         <option value="5">5 star</option>
                         <option value="4">4 star</option>
                         <option value="3">3 star</option>
@@ -42,7 +42,7 @@
                     <br><br>
                     Review:
                     <br>
-                    <textarea required rows="3" cols="50" placeholder="Enter your review of the park" name="review"  maxlength="300"></textarea>
+                    <textarea required rows="3" cols="50" placeholder="Enter your review of the park" id="review" name="review"  maxlength="300"></textarea>
                     
                     <br><br>
                     <input type="submit" name="submitreview" value="Submit">
