@@ -23,7 +23,7 @@ try {
     $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if ($stmt->fetchColumn() == 0 || empty($data))
+    if ($stmt->fetchColumn() == 0)
     {
         // User does not exist
         echo "Login unsuccessful";
@@ -33,11 +33,14 @@ try {
     } 
     else 
     {
-        // User exists
-        echo "Login successful";
-        $_SESSION['user_id'] = $data['user_id'];
-        
-        header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+        if ($pass == $data['pw'])
+        {
+            // User exists
+            echo "Login successful";
+            $_SESSION['user_id'] = $data['user_id'];
+            
+            header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+        }
 
     }
 
