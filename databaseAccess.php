@@ -16,7 +16,7 @@ try {
         fullname VARCHAR(50) NOT NULL,
         birthdate VARCHAR(30) NOT NULL,
         email VARCHAR(50) NOT NULL,
-        pass VARCHAR(30) NOT NULL
+        pass VARCHAR(255) NOT NULL
         )";   
     $conn->exec($createUsers);
 
