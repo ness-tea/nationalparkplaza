@@ -23,12 +23,10 @@ try
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
 
-    // $data = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    $rowCount = $stmt->rowCount();
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if ($rowCount == 1 || !empty($data))
+    if (!empty($data))
     {
         // User exists
         echo "Login successful";
