@@ -41,6 +41,9 @@ try {
             
             header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
         }
+        else{
+            echo "user exists but pw is wrong";
+        }
 
     }
 
