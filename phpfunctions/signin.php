@@ -19,28 +19,29 @@ try
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query we are using to check if the user exists in database
-    $query = "SELECT * FROM Users WHERE email=?";
+    $query = "SELECT COUNT(email) FROM Users WHERE email = ?";
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
 
     // $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if (1)
+    if ($stmt->fetchColumn() == 0)
+    {
+        // User does not exist
+        echo "Login unsuccessful";
+
+        // Redirect to table of users.
+        header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
+    } 
+    else 
     {
         // User exists
         echo "Login successful";
         $_SESSION['user_id'] = $data['user_id'];
         
         header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
-    } 
-    else 
-    {
-        // User does not exist
-        echo "Login unsuccessful";
-        
-        // Redirect to table of users.
-        header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
+
     }0
 
 }
