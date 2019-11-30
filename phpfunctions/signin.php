@@ -1,6 +1,4 @@
 <?php 
-    
-session_start();
 
 // Database access credentials
 $servername = "nationalparkplazadb.cjpr4ybdu2p3.us-east-2.rds.amazonaws.com";
@@ -12,13 +10,12 @@ $dbname = "nationalparkplaza";
 $email = $_POST['email'];
 $pass = md5($_POST['pass']); // decode hashed password
 
-try 
-{   
+try {
     // Connect to the SQL databse using PDO
-    $conn = new PDO("mysql:host=$servername; dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Query we are using to check if the user exists in database
+    // Query to check if there are any existing users with the same email first
     $query = "SELECT COUNT(email) FROM Users WHERE email = ?";
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
@@ -42,7 +39,7 @@ try
         
         header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
 
-    }0
+    }
 
 }
 catch(PDOException $e)
