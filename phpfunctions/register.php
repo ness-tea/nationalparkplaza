@@ -19,7 +19,7 @@ try {
     // Query to check if there are any existing users with the same email first
     $query = "SELECT COUNT(email) FROM Users WHERE email = ?";
     $stmt = $conn->prepare($query);
-    $stmt->execute(array(':email'=> $email));
+    $stmt->execute(array($email));
     
     // Check if the query returned no existing users - then we can add the account to the database
     if ($stmt->rowCount() == 0)
