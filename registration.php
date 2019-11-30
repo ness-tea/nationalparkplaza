@@ -1,8 +1,6 @@
 <!doctype html>
 <html>
 
-<?php $activePage = "search"; ?>
-
 <?php include('header.php'); ?>
 <?php include('menu.php'); ?>
 
