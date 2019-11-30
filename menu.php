@@ -20,8 +20,8 @@ $current_page = PageName();
         <ul>
             <div class="header-left">
                 <li><a class="<?php echo $current_page == 'index.php' ? 'active':NULL ?>" href="index.php">Search</a></li>
-                <li><a class="<?php echo $current_page == 'review.php' ? 'active':NULL ?>" href="review.php">Write Review</a></li>
-                <li><a class="<?php echo $current_page == 'submit.php' ? 'active':NULL ?>" href="submit.php">Submit Park</a></li>
+                <li><a class="<?php echo $current_page == 'review.php' ? 'active':NULL ?>" href="<?php echo $_SESSION['loggedin'] == true ? 'login.php':'review.php' ?>">Write Review</a></li>
+                <li><a class="<?php echo $current_page == 'submit.php' ? 'active':NULL ?>" href="<?php echo $_SESSION['loggedin'] == true ? 'login.php':'submit.php' ?>">Submit Park</a></li>
             </div>
             <div class="header-right">
                 <li><a class="<?php echo $current_page == 'login.php' ? 'active':NULL ?>" 
