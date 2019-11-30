@@ -51,16 +51,4 @@
         <br/><br/><br/>
     </div>
 
-    <!-- Footer layout for Contact Information -->
-    <div class="footer">
-        <footer>
-            <h1 class="footer-title"><b>Contact Information</b></h1>
-            <p>
-                Jiuwei Wang <a href="mailto:wangj160@mcmaster.ca">wangj160@mcmaster.ca</a>,
-                Vanessa Truong <a href="mailto:truonv1@mcmaster.ca">truonv1@mcmaster.ca</a>
-            </p>
-        </footer>
-    </div>
-</body>
-
-</html>
+<?php include('footer.php'); ?>
