@@ -19,19 +19,19 @@ try
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
 
-    // Check if there is the user's entry in the table - meaning that user does exist
-    if ($stmt->fetchColumn() == 1)
-    {
+    // // Check if there is the user's entry in the table - meaning that user does exist
+    // if ($stmt->fetchColumn() == 1)
+    // {
         echo "Log in successful";
         // // Setting the session to the returned user ID.
         // $_SESSION['user_id'] = $rows[0]['ID'];
         
         // // Redirect to table of users.
         // header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
-    } else {
-        echo "Login not successful";
-        // header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
-    }
+    // } else {
+    //     echo "Login not successful";
+    //     // header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
+    // }
 
 
 ?>
