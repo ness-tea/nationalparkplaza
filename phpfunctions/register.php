@@ -22,7 +22,7 @@ try {
     $stmt->execute(array($email));
     
     // Check if the query returned no existing users - then we can add the account to the database
-    if ($stmt->rowCount() == 0)
+    if ($stmt->fetchColumn() == 0)
     {
         $query = "INSERT INTO Users (fullname, birthdate, email, pw) 
                 VALUES (:fullname, :birthdate, :email, :pass)";
