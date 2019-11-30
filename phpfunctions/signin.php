@@ -11,8 +11,8 @@ $email = $_POST['email'];
 $pass = md5($_POST['pass']);
 
 try
-    $conn = new PDO("mysql:host=$servername; dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // $conn = new PDO("mysql:host=$servername; dbname=$dbname", $username, $password);
+    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query we are using to check if the user exists in database
     // $query = "SELECT COUNT(email) FROM Users WHERE email = ?";
