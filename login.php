@@ -50,7 +50,7 @@
             <div class="login-form"  >
 
                 <!-- Call validateRegistration on submit input -->
-                <form action="phpfunctions/register.php" onsubmit="return validateRegistration()" method="post">
+                <form action="phpfunctions/signin.php" name="signin" onsubmit="return validateRegistration()" method="post">
                     <br>
                     <p>Email:</p>
                     <input required type="email" name="email">
