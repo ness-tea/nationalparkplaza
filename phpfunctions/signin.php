@@ -21,10 +21,10 @@ try {
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
 
-    $data = $stmt->fetch();
+    $data = $stmt->fetchAll();
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if (count($data) == 0 || !password_verify($pass, $data['pass']))
+    if (count($data) == 0 || !password_verify($pass, $data[0]->pass))
     {
         // User does not exist
         echo "Login unsuccessful";
