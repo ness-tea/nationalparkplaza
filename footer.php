@@ -5,7 +5,7 @@
 <div class="footer">
     <footer>
         <!-- This code makes a contact infor box in the footer section on each pages-->
-        <h1 class="footer-title"><b>Contact Information</b></h1>
+        <h1 class="footer-title"><b>Contact Info</b></h1>
         <br/>
         Vanessa Truong 
         <br/>

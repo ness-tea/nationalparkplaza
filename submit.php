@@ -3,6 +3,4 @@
 <?php include('header.php'); ?>
 <?php include('menu.php'); ?>
 
-</body>
-
-</html>
+<?php include('footer.php') ?>

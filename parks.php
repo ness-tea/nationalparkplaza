@@ -83,18 +83,5 @@
 
         </div>
     </div>
-    <!-- This is the section of footer, which style defined in the css -->
-    <div class="footer">
-        <footer>
-            <!-- This code makes a contact infor box in the footer section on each pages-->
-            <h1 class="footer-title"><b>Contact Information</b></h1>
-            <p>
-                Jiuwei Wang <a href="mailto:wangj160@mcmaster.ca">wangj160@mcmaster.ca</a>,
-                Vanessa Truong <a href="mailto:truonv1@mcmaster.ca">truonv1@mcmaster.ca</a>
-            </p>
-        </footer>
-    </div>
 
-</body>
-
-</html>
+<?php include('footer.php') ?>
