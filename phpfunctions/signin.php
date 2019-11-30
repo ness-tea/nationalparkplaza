@@ -8,7 +8,7 @@ $dbname = "nationalparkplaza";
 
 // Store user input from login.php
 $email = $_POST['email'];
-$pass = md5($_POST['pass']);
+$pass = md5($_POST['pass']); // decode hashed password
 
 try 
 {   
@@ -19,10 +19,13 @@ try
     // Query we are using to check if the user exists in database
     $query = "SELECT * FROM Users WHERE email=? AND pw=?";
     $stmt = $conn->prepare($query);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $stmt->execute(array($email, $pass));
 
+    $data = $stmt->fetch();
+
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if (count($stmt->fetchAll()) == 1)
+    if ($data['email'] == $email and $data['pw'] == $pass)
     {
         echo "Log in successful";
         // Setting the session to the returned user ID.
