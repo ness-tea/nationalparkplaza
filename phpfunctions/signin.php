@@ -17,28 +17,21 @@ try
     if (isset($email) && isset($pass))
     {
         // Query we are using to check if the user exists in database
-        $query = "SELECT * FROM Users WHERE email = :email AND pw = :pass";
+        $query = "SELECT COUNT(*) FROM Users WHERE email = ? AND pw = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->execute(array($email, $pass));
 
-        // // Prepared statement
-        // $stmnt = $pdo->prepare($query);
-        // try {
-        //     $stmnt->execute(array(':email'=> $email, ':pass'=> $pass));
-        // } catch (PDOException $e) {
-        //     echo $e->getMessage();
-        // }
-
-        // // For getting data from the query to submitted above.
-        // $rows = $stmnt->fetchAll();
-
-        // // If there is only one user
-        // if (count($rows) == 1){
-        //     // Setting the session to the returned user ID.
-        //     $_SESSION['fullname'] = $rows[0]['fullname'];
-        //     // Redirect to table of users.
-        //     header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
-        // } else {
-        //     header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
-        // }
+        // Check if there is the user's entry in the table - meaning that user does exist
+        if ($stmt->fetchColumn() > 0)
+        {
+            // Setting the session to the returned user ID.
+            $_SESSION['user_id'] = $rows[0]['ID'];
+            
+            // Redirect to table of users.
+            header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+        } else {
+            header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
+        }
 
         echo "Log in successful";
 

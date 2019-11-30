@@ -13,6 +13,7 @@ $email = $_POST['email'];
 $pass = md5($_POST['pass']);  // hash password for security
 
 try {
+    // Connect to the SQL databse using PDO
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
@@ -24,6 +25,7 @@ try {
     // Check if the query returned no existing users - then we can add the account to the database
     if ($stmt->fetchColumn() == 0)
     {
+        // Reassign Query to insert user's input into Users table for registration
         $query = "INSERT INTO Users (fullname, birthdate, email, pw) 
                 VALUES (:fullname, :birthdate, :email, :pass)";
         $stmt = $conn->prepare($query);
