@@ -1,4 +1,6 @@
 <?php 
-    session_unset();
+    session_start();
+    unset($_SESSION['user_id']);
+    unset($_SESSION['loggedin']);
     header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
 ?>
