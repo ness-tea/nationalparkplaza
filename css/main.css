@@ -78,6 +78,7 @@ h1 {
     height: 100px;
     margin-top: -20px;
     background-color: black;
+    background-size: cover;
     color: white;
     text-align: center;
     position: relative;
