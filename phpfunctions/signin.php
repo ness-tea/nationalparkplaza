@@ -22,25 +22,25 @@ try {
     $stmt->execute(array($email));
 
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    print_r($data[0]['pass']);
+    //print_r($data[0]['pass']);
 
-    // // // Check if there is the user's entry in the table - meaning that user does exist
-    // if ($stmt->rowCount() == 0 )
-    // {
-    //     // User does not exist
-    //     echo "Login unsuccessful";
+    // // Check if there is the user's entry in the table - meaning that user does exist
+    if ($stmt->rowCount() == 0 || !password_verify($pass, $data[0]['pass']))
+    {
+        // User does not exist
+        echo "Login unsuccessful";
 
-    //     // Redirect to table of users.
-    //     header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
-    // } 
-    // else 
-    // {
-    //     // User exists
-    //     echo "Login successful";
-    //     $_SESSION['user_id'] = $data['user_id'];
+        // Redirect to table of users.
+        header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
+    } 
+    else 
+    {
+        // User exists
+        echo "Login successful";
+        $_SESSION['user_id'] = $data['user_id'];
         
-    //     header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
-    // }
+        header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+    }
 
 }
 catch(PDOException $e)
