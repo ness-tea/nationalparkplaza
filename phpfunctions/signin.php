@@ -23,6 +23,15 @@ try {
 
     $data = $stmt->fetchAll();
 
+    if (empty($data) || !$data)
+    {
+        echo "Issue with fetchAll";
+    }
+    else
+    {
+        echo "fetchall is fine";
+    }
+
     // // Check if there is the user's entry in the table - meaning that user does exist
     if ($stmt->rowCount() == 0)
     {
