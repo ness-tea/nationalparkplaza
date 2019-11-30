@@ -16,7 +16,7 @@ try
 
     // Query we are using to check if the user exists in database
     $query = "SELECT COUNT(email) FROM Users WHERE email = ?";
-    $stmt = $conn->prepare($query);
+    // $stmt = $conn->prepare($query);
     // $stmt->execute(array($email));
 
     // // Check if there is the user's entry in the table - meaning that user does exist
