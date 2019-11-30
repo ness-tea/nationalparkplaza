@@ -16,7 +16,7 @@ $current_page = PageName();
     - php script embedded in each menu link to set active page for highlight sigfnifier
     - php script embedded in Login/Logout link to check whether there is an active session or not  -->
 <body>
-    <div class="header">
+    <div class="header">h
         <ul>
             <div class="header-left">
                 <li><a class="<?php echo $current_page == 'index.php' ? 'active':NULL ?>" href="index.php">Search</a></li>
@@ -28,7 +28,7 @@ $current_page = PageName();
                        href="<?php echo $_SESSION['loggedin'] == true ? 'logout.php':'login.php' ?>">
                        <?php echo $_SESSION['loggedin'] == true ? 'Logout':'Login' ?>
                     </a></li>
-                <?php if ($_SESSION['loggedin'] == true) echo {} else { `<li><a href="registration.php">Register</a></li>`} ?>
+                <?php if ($_SESSION['loggedin'] == NULL) echo {`<li><a href="registration.php">Register</a></li>`} ?>
             </div>
         </ul>
 
