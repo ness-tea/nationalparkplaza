@@ -62,6 +62,7 @@ try {
             // User exists
             echo "Login successful";
             $_SESSION['user_id'] = $data['user_id'];
+            $_SESSION['loggedin'] = true;
             
             header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
         }
