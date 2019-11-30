@@ -14,7 +14,9 @@
         <!-- Registration page content -->
         <div class="login-content">
             <h1>Log into an Account</h1>
-            You must be a registered user to write a review or submit a park. <br/>
+            <br/>
+            You must be logged in to write a review or submit a park. 
+            <br/>
             Log in to explore National Parks in your area today!
             
             <!-- Form tag for submitting user name, birth date, email and account password, as well as the submit/reset buttons -->
