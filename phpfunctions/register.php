@@ -10,7 +10,7 @@ $dbname = "nationalparkplaza";
 $fullname = $_POST['fullname'];
 $birthdate = $_POST['birthday'];
 $email = $_POST['email'];
-$pass = md5($_POST['pass']);  // hash password for security
+$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);  // hash password for security
 
 try {
     // Connect to the SQL databse using PDO
@@ -26,7 +26,7 @@ try {
     if ($stmt->fetchColumn() == 0)
     {
         // Reassign Query to insert user's input into Users table for registration
-        $query = "INSERT INTO Users (fullname, birthdate, email, pw) 
+        $query = "INSERT INTO Users (fullname, birthdate, email, pass) 
                 VALUES (:fullname, :birthdate, :email, :pass)";
         $stmt = $conn->prepare($query);
         $stmt->execute(array(':fullname'=> $fullname, ':birthdate'=> $birthdate, ':email'=> $email, ':pass'=> $pass));

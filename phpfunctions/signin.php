@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 // Database access credentials
 $servername = "nationalparkplazadb.cjpr4ybdu2p3.us-east-2.rds.amazonaws.com";
@@ -8,7 +9,7 @@ $dbname = "nationalparkplaza";
 
 // Store user input from login.php
 $email = $_POST['email'];
-$pass = md5($_POST['pass']); // decode hashed password
+$pass = $_POST['pass']; // decode hashed password
 
 try {
     // Connect to the SQL databse using PDO
@@ -16,12 +17,14 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query to check if there are any existing users with the same email first
-    $query = "SELECT COUNT(email) FROM Users WHERE email = ?";
+    $query = "SELECT * FROM Users WHERE email = ?";
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
 
+    $data = $stmt->fetch();
+
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if ($stmt->fetchColumn() == 0)
+    if (count($data) == 0 || !password_verify($pass, $data['pass']))
     {
         // User does not exist
         echo "Login unsuccessful";
