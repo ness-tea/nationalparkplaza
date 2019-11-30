@@ -21,7 +21,7 @@ try {
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
 
-    $data = $stmt->fetchAll();
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     print_r($data);
 
     // // // Check if there is the user's entry in the table - meaning that user does exist
