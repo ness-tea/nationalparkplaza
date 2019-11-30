@@ -21,18 +21,10 @@ try {
     $stmt = $conn->prepare($query);
     $stmt->execute(array($email));
 
-    $data = $stmt->fetchAll();
-
-    if (password_verify($pass, $data[0]->pass))
-    {
-        echo "it does match";
-    }
-    else{
-        echo "Something wrong with password_verify";
-    }
+    // $data = $stmt->fetchAll();
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if (count($data) == 0 || !password_verify($pass, $data[0]->pass))
+    if (count($data) == 0)
     {
         // User does not exist
         echo "Login unsuccessful";
