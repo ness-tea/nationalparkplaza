@@ -17,28 +17,31 @@ try
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query we are using to check if the user exists in database
-    $query = "SELECT * FROM Users WHERE email=? AND pw=?";
+    $query = "SELECT * FROM Users WHERE email=?";
     $stmt = $conn->prepare($query);
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $stmt->execute(array($email, $pass));
+    $stmt->execute(array($email));
 
-    $data = $stmt->fetch();
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $rowCount = $stmt->rowCount();
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if ($data['email'] == $email and $data['pw'] == $pass)
+    if ($rowCount == 0 || strcmp($pass, $data['pw']) != 0)
     {
-        echo "Log in successful";
-        // Setting the session to the returned user ID.
-        $_SESSION['user_id'] = $rows[0]['ID'];
+        // Usesr does not exist
+        echo "Login unsuccessful";
         
         // Redirect to table of users.
-        header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+        header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
     } 
     else 
     {
-        echo "Login not successful";
-        header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
-    }
+        // User exists
+        echo "Login successful";
+        $_SESSION['email'] = $data['email'];
+        
+        header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+    }0
 
 }
 catch(PDOException $e)
