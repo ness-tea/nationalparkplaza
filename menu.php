@@ -1,5 +1,8 @@
 <?php 
 
+// Need to track whether there is an active session or not
+session_start();
+
 // function to get the current page name
 function PageName() {
     return substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
@@ -25,7 +28,10 @@ $current_page = PageName();
                        href="<?php echo $_SESSION['loggedin'] == true ? 'logout.php':'login.php' ?>">
                        <?php echo $_SESSION['loggedin'] == true ? 'Logout':'Login' ?>
                     </a></li>
-                <?php echo $_SESSION['loggedin'] == true ? NULL:`<li><a href="registration.php">Register</a></li>` ?>
+                <li><a class="<?php echo $current_page == 'registration.php' ? 'active':NULL ?>" 
+                       href="<?php echo $_SESSION['loggedin'] == true ? NULL:'registration.php' ?>">
+                       <?php echo $_SESSION['loggedin'] == true ? 'Already Registered':'Register' ?>
+                    </a></li>
             </div>
         </ul>
 
