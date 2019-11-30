@@ -5,7 +5,7 @@
     include('menu.php'); 
 ?>
 
- <!-- Wrapper for content of the Submit page -->
+ <!-- Wrapper for content of the Submit Review page -->
  <div class="wrap-submit">
         <!-- Apply indent styling -->
         <div id="indent"></div>
@@ -17,7 +17,7 @@
             <div class="submit-park">
 
                 <!-- Submit attributes -->
-                <form name="submitPark" enctype="multipart/form-data" action="/reviews.php" method="post">
+                <form action="phpfunctions/submitreview.php" name="submitreview" enctype="multipart/form-data" method="post">
 
                     <!-- Step 1) Enter the park to be submitted -->
                     <p>Name of Park:</p>
@@ -45,7 +45,7 @@
                     <textarea required rows="3" cols="50" placeholder="Enter your review of the park" name="review"  maxlength="300"></textarea>
                     
                     <br><br>
-                    <input type="submit" value="Submit">
+                    <input type="submit" name="submitreview" value="Submit">
                     <input type="reset" value="Reset">
                 </form>
 

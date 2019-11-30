@@ -37,10 +37,16 @@ try {
             $stmt->execute(array(':fullname'=> $fullname, ':birthdate'=> $birthdate, ':email'=> $email, ':pass'=> $hash));
         
             echo "User added successfully";
+
+            // Redirect to login page.
+            header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
         }
         else
         {
             echo "User already exists";
+
+            // Redirect to registration page.
+            header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
         }
     }
     else if (isset($_POST['btnLogin']))
@@ -54,7 +60,7 @@ try {
             // User does not exist
             echo "Login unsuccessful";
     
-            // Redirect to table of users.
+            // Redirect to login page.
             header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
         } 
         else 

@@ -30,7 +30,7 @@
 
                 <br>
                 <p>Account password:</p>
-                <input required type="password" id="pass" name="pass">
+                <input required type="password" placeholder="***********" id="pass" name="pass">
                 
                 <br>
                 <br>

@@ -6,7 +6,7 @@
     <footer>
         <!-- This code makes a contact infor box in the footer section on each pages-->
         <h1 class="footer-title"><b>Contact Info</b></h1>
-        <hr style="width: 10%; color: white">
+        <hr style="width: 15%; color: white">
         Built by Vanessa Truong 
         <br/>
         <a href="mailto:truonv1@mcmaster.ca">truonv1@mcmaster.ca</a>
