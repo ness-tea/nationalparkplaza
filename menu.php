@@ -28,7 +28,7 @@ $current_page = PageName();
                        href="<?php echo $_SESSION['loggedin'] == true ? 'logout.php':'login.php' ?>">
                        <?php echo $_SESSION['loggedin'] == true ? 'Logout':'Login' ?>
                     </a></li>
-                <?php if ($_SESSION['loggedin'] == NULL) echo {`<li><a href="registration.php">Register</a></li>`} ?>
+                <li><a href="registration.php">Register</a></li>
             </div>
         </ul>
 
