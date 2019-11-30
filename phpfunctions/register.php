@@ -10,7 +10,7 @@ $dbname = "nationalparkplaza";
 $fullname = $_POST['fullname'];
 $birthdate = $_POST['birthday'];
 $email = $_POST['email'];
-$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT,  ['cost' => 15]);  // hash password for security
+$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);  // hash password for security
 
 try {
     // Connect to the SQL databse using PDO

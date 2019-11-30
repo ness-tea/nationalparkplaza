@@ -12,7 +12,9 @@ $current_page = PageName();
 
 ?>
 
-<!-- Menu/nav bar and webpage title -->
+<!-- Menu/nav bar and webpage title 
+    - php script embedded in each menu link to set active page for highlight sigfnifier
+    - php script embedded in Login/Logout link to check whether there is an active session or not  -->
 <body>
     <div class="header">
         <ul>
@@ -22,7 +24,10 @@ $current_page = PageName();
                 <li><a class="<?php echo $current_page == 'submit.php' ? 'active':NULL ?>" href="submit.php">Submit Park</a></li>
             </div>
             <div class="header-right">
-                <li><a class="<?php echo $current_page == 'login.php' ? 'active':NULL ?>" href="login.php"><?php echo $_SESSION['loggedin'] == true ? 'Logout':'Login' ?></a></li>
+                <li><a class="<?php echo $current_page == 'login.php' ? 'active':NULL ?>" 
+                       href="<?php echo $_SESSION['loggedin'] == true ? 'logout.php':'login.php' ?>">
+                       <?php echo $_SESSION['loggedin'] == true ? 'Logout':'Login' ?>
+                    </a></li>
                 <li><a class="<?php echo $current_page == 'registration.php' ? 'active':NULL ?>" href="registration.php">Register</a></li>
             </div>
         </ul>

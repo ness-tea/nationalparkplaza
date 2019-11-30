@@ -19,7 +19,7 @@
             <div class="register-form"  >
 
                 <!-- Call validateRegistration on submit input -->
-                <form action="phpfunctions/signin.php" name="register" onsubmit="return validateRegistration()" method="post">
+                <form action="phpfunctions/users.php" name="register" onsubmit="return validateRegistration()" method="post">
 
                     <p>Full Name:</p>
                     <input type="text" placeholder="Enter your name" id="fullname" name="fullname">

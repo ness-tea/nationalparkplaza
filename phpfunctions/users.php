@@ -1,48 +1,78 @@
 <?php 
-    session_start();
-    // Check if session is a logged in one, if it isn't then redirect to login.
-    if (!isset($_SESSION['ID'])){
-        header("Location: https://{$_SERVER['HTTP_HOST']}/Workshop7/index.php");
+session_start();
+
+// Database access credentials
+$servername = "nationalparkplazadb.cjpr4ybdu2p3.us-east-2.rds.amazonaws.com";
+$username = "truonv1";
+$password = "12345678";
+$dbname = "nationalparkplaza";
+
+// Store user input from login.php
+// Store user input from registration.php
+$fullname = $_POST['fullname'];
+$birthdate = $_POST['birthday'];
+$email = $_POST['email'];
+$pass = $_POST['pass'];
+$hash = password_hash($pass, PASSWORD_DEFAULT);  // hash password for security
+
+try {
+    // Connect to the SQL databse using PDO
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Query to check if there are any existing users with the same email first
+    $query = "SELECT * FROM Users WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->execute(array($email));
+
+    if (isset($_POST['btnRegister']))
+    {
+        // Check if the query returned no existing users - then we can add the account to the database
+        if ($stmt->fetchColumn() == 0)
+        {
+            // Reassign Query to insert user's input into Users table for registration
+            $query = "INSERT INTO Users (fullname, birthdate, email, pass) 
+                    VALUES (:fullname, :birthdate, :email, :pass)";
+            $stmt = $conn->prepare($query);
+            $stmt->execute(array(':fullname'=> $fullname, ':birthdate'=> $birthdate, ':email'=> $email, ':pass'=> $hash));
+        
+            echo "User added successfully";
+        }
+        else
+        {
+            echo "User already exists";
+        }
     }
+    else if (isset($_POST['btnLogin']))
+    {
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        //print_r($data[0]['pass']);
+    
+        // // Check if there is the user's entry in the table - meaning that user does exist
+        if ($stmt->rowCount() == 0 || !password_verify($pass, $data[0]['pass']))
+        {
+            // User does not exist
+            echo "Login unsuccessful";
+    
+            // Redirect to table of users.
+            header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
+        } 
+        else 
+        {
+            // User exists
+            echo "Login successful";
+            $_SESSION['user_id'] = $data['user_id'];
+            $_SESSION['loggedin'] = true;
+            
+            header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
+        }
+    }
+}
+catch(PDOException $e)
+{
+    echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+
 ?>
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bad User Database</title>
-</head>
-<body>
-    <header>
-        <a href="phpfunctions/logout.php">Logout!</a>
-    </header>
-    <!-- Here we would like to get all user data from the user table and display it -->
-    <!-- We will write some php here to obtain data to be presented. -->
-    <table>
-        <tr>
-            <th>Emails</th>
-        </tr>
-    <?php
-        // Connectinig to Database
-         $pdo = new PDO('mysql:host=localhost;dbname=workshop7', 'chaneh', 'test');
-         $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        //  Selecting all emails on the users table
-         $sql = "Select Email from users";
-         $stmnt = $pdo->prepare($sql);
-        try{
-            $stmnt->execute();
-        } catch(PDOException $e) {   
-            echo $e->getMessage();
-        }
-
-        // Iterating through each row of the returned query
-        while ($row = $stmnt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<tr><td>'.$row['Email'].'</td></tr>';
-        }
-    ?>
-    </table>
-</body>
-</html>
