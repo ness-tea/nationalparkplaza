@@ -1,40 +1,10 @@
 <!doctype html>
 <html>
 
-<head>
-    <meta charset="UTF-8" />
-    <title>National Park Plaza</title>
-
-    <!-- Linking google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Forum|Julius+Sans+One|Lateef|Open+Sans&display=swap" rel="stylesheet">
-
-    <!-- Linking the css stylesheet to style html elements -->
-    <link href="css/main.css" type="text/css" rel="stylesheet">
-
-    <!-- Linking favicon png -->
-    <link rel="icon" href="assets/header-ico.png">
-
-    <script src="scripts/js/validation.js"></script> 
-</head>
-
-<body>
-    <!-- This is the header, which style defined in the css -->
-    <div class="header">
-        <ul>
-            <div class="header-left">
-                <li><a href="index.php">Search</a></li>
-                <li><a href="review.php">Write Review</a></li>
-                <li><a href="submit.php">Submit Park</a></li>
-            </div>
-            <div class="header-right">
-                <li><a class="active" href="login.php">Login</a></li>
-                <li><a href="registration.php">Register</a></li>
-            </div>
-        </ul>
-        <h1 class="title">NATIONAL PARK PLAZA</h1>
-    </div>
-
-    <hr class="divider">
+<?php
+    include('header.php');
+    include('menu.php');
+?>
 
     <!-- Wrapper for registration page content -->
     <div class="wrap-login">
@@ -44,7 +14,8 @@
         <!-- Registration page content -->
         <div class="login-content">
             <h1>Log into an Account</h1>
-            Log in and explore National Parks in your area today!
+            You must be a registered user to write a review or submit a park. <br/>
+            Log in to explore National Parks in your area today!
             
             <!-- Form tag for submitting user name, birth date, email and account password, as well as the submit/reset buttons -->
             <div class="login-form"  >
