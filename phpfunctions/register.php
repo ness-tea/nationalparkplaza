@@ -17,7 +17,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Query to check if there are any existing users with the same email first
-    $query = "SELECT COUNT(*) FROM Users WHERE email = $email";
+    $query = "SELECT COUNT(*) FROM Users WHERE email = `$email`";
 
     if ($res = $conn->query($query))
     {
