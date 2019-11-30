@@ -22,7 +22,7 @@ try {
     $stmt->execute(array($email));
 
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    print_r(password_hash('Waddles123!', PASSWORD_DEFAULT));
+    print_r(password_hash('World1234!', PASSWORD_DEFAULT));
 
     // // // Check if there is the user's entry in the table - meaning that user does exist
     // if ($stmt->rowCount() == 0 || !password_verify($pass, $data[0]['pass']))
