@@ -26,7 +26,7 @@ try
     $rowCount = $stmt->rowCount();
 
     // // Check if there is the user's entry in the table - meaning that user does exist
-    if ($rowCount == 0 || strcmp($pass, $data['pw']) != 0)
+    if ($rowCount == 0 || $pass == $data['pw'])
     {
         // Usesr does not exist
         echo "Login unsuccessful";
