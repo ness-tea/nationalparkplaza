@@ -13,7 +13,7 @@
                 <li><a href="registration.php">Register</a></li>
             </div>
         </ul>
-        <br>
+
         <h1 class="title">NATIONAL PARK PLAZA</h1> 
     </div>
 
