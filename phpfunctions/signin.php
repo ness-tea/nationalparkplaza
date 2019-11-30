@@ -30,7 +30,7 @@ try
             // Redirect to table of users.
             header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
         } else {
-            header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
+            header("Location: https://{$_SERVER['HTTP_HOST']}/registration.php");
         }
 
         echo "Log in successful";
