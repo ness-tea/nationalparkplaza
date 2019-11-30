@@ -1,6 +1,10 @@
 <!-- This is the header, which style defined in the css -->
 <html>
 
+<?php 
+    session_start(); 
+?>
+
 <head>
     <meta charset="UTF-8" />
     <!-- This is the webside title -->
