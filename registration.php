@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 
+<?php sessioni_start(); ?>
 <?php include('header.php'); ?>
 <?php include('menu.php'); ?>
 

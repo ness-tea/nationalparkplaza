@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 
-<?php include('header.php'); ?>
-<?php include('menu.php'); ?>
+<?php 
 
+session_start(); 
+include('header.php');
+include('menu.php');
+
+?>
     <!-- This is the section of search page body, which style defined in the css -->
     <div class="wrap-search">
         <div id="indent"></div>
