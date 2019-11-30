@@ -1,8 +1,7 @@
 
 
-<hr class="divider">
-
 <!-- This is the section of footer, which style defined in the css -->
+<hr class="divider">
 <div class="footer">
     <footer>
         <!-- This code makes a contact infor box in the footer section on each pages-->
