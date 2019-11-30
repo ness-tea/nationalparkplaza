@@ -34,7 +34,7 @@ try {
             $query = "INSERT INTO Users (fullname, birthdate, email, pass) 
                     VALUES (:fullname, :birthdate, :email, :pass)";
             $stmt = $conn->prepare($query);
-            $stmt->execute(array(':fullname'=> $fullname, ':birthdate'=> $birthdate, ':email'=> $email, ':pass'=> $pass));
+            $stmt->execute(array(':fullname'=> $fullname, ':birthdate'=> $birthdate, ':email'=> $email, ':pass'=> $hash));
         
             echo "User added successfully";
         }
