@@ -13,7 +13,7 @@ $fullname = $_POST['fullname'];
 $birthdate = $_POST['birthday'];
 $email = $_POST['email'];
 $pass = $_POST['pass'];
-$hash = password_hash($pass, PASSWORD_DEFAULT);  // hash password for security
+$hash = password_hash($pass, PASSWORD_DEFAULT,  ['cost' => 15]);  // hash password for security
 
 try {
     // Connect to the SQL databse using PDO
@@ -46,7 +46,7 @@ try {
     else if (isset($_POST['btnLogin']))
     {
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        print_r(password_hash('World1234!', PASSWORD_DEFAULT));
+        print_r(password_hash('World1234!', PASSWORD_DEFAULT,  ['cost' => 15]));
     
         // // // Check if there is the user's entry in the table - meaning that user does exist
         // if ($stmt->rowCount() == 0 || !password_verify($pass, $data[0]['pass']))
