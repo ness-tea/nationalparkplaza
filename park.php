@@ -61,8 +61,7 @@
                 // Populate park points
                 populatePark(thisPark[0]);
             </script>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initParkMap">
-            </script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initParkMap"></script>
 
         </div>
         <address>

@@ -15,7 +15,7 @@ var Pelee = {
     lng: -82.518484
 };
 
-var Park = {};
+var Park = [];
 
 function initPeleeMap() {
     
@@ -67,10 +67,12 @@ function initBruceMap() {
 function populatePark(park)
 {
     // Fill in the Park struct
-    Park = {
+    var marker = {
         lat: parseFloat(park['latitude']),
         lng: parseFloat(park['longitude'])
     };
+
+    Park.push(marker);
 }
 
 function initParkMap() {
@@ -78,12 +80,12 @@ function initParkMap() {
     var map = new google.maps.Map(
         document.getElementById('map'), {
             zoom: 10,
-            center: Park
+            center: Park[0]
         });
 
     // The marker positioned at park location
     var marker = new google.maps.Marker({
-        position: Park,
+        position: Park[0],
         map: map
     });
 }
