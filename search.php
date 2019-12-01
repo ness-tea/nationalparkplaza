@@ -93,56 +93,44 @@ $conn = null;
                 <tr>
                     <!-- A table header is defined with the <th> tag. -->
                     <th>Name</th>
-                    <th>Rating</th>
                     <th>Information</th>
                 </tr>
-                <tr>
+                <?php
+                    foreach ($parks as $park)
+                    {
+                        // Displaying html code
+                        echo `<tr>
+                                <!-- A table data/cell is defined with the <td> tag. -->
+                                <td>
+                                    <!-- This code links to the detailed object page. -->
+                                    <h4><a href="park.php">$park['parkname']</a></h4>
+                                </td>
+                                <td>$park['dsc']</td>
+                            </tr>`
+                    }
+                ?>
+                <!-- <tr>
                     <!-- A table data/cell is defined with the <td> tag. -->
-
                     <td>
                         <!-- This code links to the detailed object page. -->
                         <h4><a href="object1.html">Bruce Peninsula National Park</a></h4>
                     </td>
-                    <td>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                    </td>
                     <td>Bruce Peninsula National Park beckons hikers to travel woodland trails, swimmers to refresh in clear waters, explorers to discover the rugged limestone coast and campers to revel at a stunning night sky.</td>
                 </tr>
                 <tr>
-                    <!-- This code add a picture in the <td> tag. -->
-
                     <td>
                         <!-- This code links to the detailed object page. -->
                         <h4><a href="object2.html">Georgian Bay Islands National Park</a></h4>
                     </td>
-                    <td>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                    </td>
                     <td>Swim in Lake Huron’s clear waters. Cycle wooded island trails. Hike paths that meander between ecosystems. Unwind at a cosy cabin. Welcome to an inspiring and beautiful place. Welcome to Georgian Bay Islands National Park.</td>
                 </tr>
                 <tr>
-
                     <td>
                         <!-- This code links to the detailed object page. -->
                         <h4><a href="object3.html">Point Pelee National Park</a></h4>
                     </td>
-                    <td>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                        <span style=font-size:100% class="fa fa-star checked"></span>
-                    </td>
                     <td>Canada’s second smallest but most diverse national park, Point Pelee’s forest hosts diverse habitats that provide a sanctuary for plants and animals rarely found elsewhere in the country and the nature lovers who enjoy it.</td>
-                </tr>
+                </tr> -->
             </table>
 
         </div>

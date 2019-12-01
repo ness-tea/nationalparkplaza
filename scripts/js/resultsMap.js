@@ -25,8 +25,6 @@ var markersOnMap = [{
         }],
         placeInfo: "Canada’s second smallest but most diverse national park, Point Pelee’s forest hosts diverse habitats that provide a sanctuary for plants and animals rarely found elsewhere in the country and the nature lovers who enjoy it.",
         placeHref: "object3.html"
-
-
     }
 ];
 
