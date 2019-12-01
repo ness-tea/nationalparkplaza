@@ -21,19 +21,32 @@
 
             <!-- Step 1) Enter the park to be submitted -->
             <p>Name of Park:</p>
-
             <!-- HTML validation - required specified for name field-->
             <!-- Max length of park name input is set to 50 characters -->
             <input required type="text" placeholder="Type a Park name" id="parkname" name="parkname" maxlength="50">
             <br>
             <span style="font-size: 0.8em">Enter the name of the park. E.g. Bruce Peninsula National Park</span>
 
-            <!-- Step 2) Enter park description -->
+            <!-- Step 2) Enter park description and other details -->
             <p>Description:</p>
-
             <!-- HTML validation - required specified for description field-->
-            <!-- Max length of park description textarea is set to 50 characters -->
-            <textarea required rows="5" cols="50" placeholder="Enter in a description of the park" id="desc" name="desc" maxlength="500"></textarea>
+            <!-- Max length of park description textarea is set to 1000 characters -->
+            <textarea required rows="5" cols="50" placeholder="Enter in a description of the park" id="desc" name="desc" maxlength="1000"></textarea>
+            <br>
+
+            <p>Things to Do:</p>
+            <!-- Max length of park description textarea is set to 1000 characters -->
+            <textarea rows="5" cols="50" placeholder="Name some of the park's notable activities" id="activities" name="activities" maxlength="1000"></textarea>
+            <br>
+
+            <p>Discover:</p>
+            <!-- Max length of park description textarea is set to 1000 characters -->
+            <textarea rows="5" cols="50" placeholder="Explain what guests can look forward at this park" id="discover" name="discover" maxlength="1000"></textarea>
+            <br>
+
+            <p>Park Management:</p>
+            <!-- Max length of park description textarea is set to 1000 characters -->
+            <textarea rows="5" cols="50" placeholder="Describe the park's environment and its maintenance" id="parkmgmt" name="parkmgmt" maxlength="1000"></textarea>
             <br>
             <br>
 

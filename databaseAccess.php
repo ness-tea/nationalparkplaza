@@ -20,19 +20,22 @@ try {
         )";   
     $conn->exec($createUsers);
 
-    echo "Users Table created successfully \n";
+    echo "Users Table created successfully - ";
 
     // SQL Create Park table
     $createParks = "CREATE TABLE Parks (
         park_id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         parkname VARCHAR(100) NOT NULL,
-        dsc VARCHAR(500) NOT NULL,      
+        dsc VARCHAR(1000) NOT NULL,  
+        activities VARCHAR(1000),
+        discover VARCHAR(1000),
+        parkmgmt VARCHAR(1000),
         longitude VARCHAR(50) NOT NULL,
         latitude VARCHAR(50) NOT NULL
         )";
      $conn->exec($createParks);
 
-     echo "Park Table created successfully \n";
+     echo "Park Table created successfully - ";
 
      // SQL Create Review table;
      $createReviews = "CREATE TABLE Reviews (
@@ -44,7 +47,7 @@ try {
         )";
     $conn->exec($createReviews);
 
-    echo "Review Table created successfully \n";
+    echo "Review Table created successfully - ";
     }
 catch(PDOException $e)
 {

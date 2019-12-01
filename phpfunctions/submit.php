@@ -16,6 +16,9 @@ $pname = str_ireplace("national", "", $pname);      // Remove any instances of n
 $pname = ucwords(strtolower(trim($pname)));  // Trim leading/following white spaces, convert string to lowercase, then capitlize first letter of every word.
 
 $desc = $_POST['desc'];
+$activ = $_POST['activities'];
+$disc = $_POST['discover'];
+$mgmt = $_POST['parkmgmt']; 
 $longitude = $_POST['longitude'];
 $latitude = $_POST['latitude'];
 
@@ -40,22 +43,22 @@ try {
         if ($stmt->fetchColumn() == 0)
         {
             // Park doesn't exist - add the user's park to the database
-            $query = "INSERT INTO Parks (parkname, dsc, longitude, latitude) 
-                    VALUES (:parkname, :dsc, :longitude, :latitude)";
+            $query = "INSERT INTO Parks (parkname, dsc, activities, discover, parkmgmt, longitude, latitude) 
+                    VALUES (:parkname, :dsc, :activ, :disc, :mgmt, :longitude, :latitude)";
             $stmt = $conn->prepare($query);
-            $stmt->execute(array(':parkname'=> $pname, ':dsc'=> $desc, ':longitude'=> $longitude, ':latitude'=> $latitude));
+            $stmt->execute(array(':parkname'=> $pname, ':dsc'=> $desc, ':activ'=> $activ, ':disc'=> $disc, ':mgmt'=> $mgmt, ':longitude'=> $longitude, ':latitude'=> $latitude));
 
             echo "Park added successfully";
 
             // Redirect to page for this park page.
-            //header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
+            header("Location: https://{$_SERVER['HTTP_HOST']}/search.php");
         }
         else
         {
             echo "Park already exists in database";
 
             // Redirect to registration page.
-            //header("Location: https://{$_SERVER['HTTP_HOST']}/submitpark.php");
+            header("Location: https://{$_SERVER['HTTP_HOST']}/submitpark.php");
         }
     }
 
