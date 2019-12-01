@@ -74,8 +74,8 @@ try {
                     VALUES (:email, :parkname, :rating, :review)";   
             $stmt = $conn->prepare($query);
             $stmt->execute(array(':email'=> $_SESSION['email'], ':parkname'=> $pname, ':rating'=> $rating, ':review'=> $review));
-            e
-            cho "Park review submitted successfully";
+            
+            echo "Park review submitted successfully";
 
             // Redirect to page for this park page.
             header("Location: https://{$_SERVER['HTTP_HOST']}/search.php");
