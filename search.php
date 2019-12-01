@@ -76,12 +76,12 @@ $conn = null;
 
 <script>
     // Retrieve matching parks from php array using json_encode()
-    var parks = <?php echo json_encode($parks); ?>;
+    var searchParks = <?php echo json_encode($parks); ?>;
 
     // Add the array elements as markers for google API live map
-    for (var i = 0; i < parks.length; i++)
+    for (var i = 0; i < searchParks.length; i++)
     {
-        addMarker(parks[i]);
+        addMarker(searchParks[i]);
     
     }
 </script>

@@ -65,7 +65,6 @@ function addMarkersOnMap() {
         // The content detais shows when click the mark
         // incluing the park name, short infor and link to individual park page
         var contentString = '<div id="content"><h4>' + markersOnMap[i].placeName +
-            '</h4><p>' + markersOnMap[i].placeInfo + '</p>' +
             '<a href=' + markersOnMap[i].placeHref + '>View More Details</a>' + '</div>';
         // Set google maps marker position
         const marker = new google.maps.Marker({
