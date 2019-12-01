@@ -28,7 +28,7 @@ try {
     {   
         // User is searching by park name.
         // Find all parks in the database matching user's name input
-        $query = "SELECT * FROM Parks WHERE parkname = ?";
+        $query = "SELECT * FROM Parks WHERE parkname LIKE %?%";
         $stmt = $conn->prepare($query);
         $stmt->execute(array($search_name));
 
@@ -55,8 +55,6 @@ try {
         $stmt->execute();
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $nomatch = true;
     }
 
 }
@@ -91,8 +89,6 @@ $conn = null;
     <div class="main" id="indent">
 
         <h1>List of National Parks</h1>
-
-        <?php echo $nomatch == true ? 'No parks matched your query.':NULL; ?>
         
         <!-- This is the section of results table, which style defined in the css -->
         <div class="results-table">
