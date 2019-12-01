@@ -17,7 +17,7 @@
                 <!-- Shows prompt before the search box -->
                 <p>Search a Park by name:</p>
                 <!-- Make a search box for searching a park by name -->
-                <form action="phpfunctions/search.php" method="post">
+                <form action="search.php" method="post">
                     <!-- This code makes show word "Search..." in search box -->
                     <input type="buttom" placeholder="Search..." id="name" name="name">
                     <!-- This code makes a submit buttom after search box -->
