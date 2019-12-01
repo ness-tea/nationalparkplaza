@@ -5,19 +5,21 @@ var closest;
 var x = document.getElementById("find-me"); // get the id by name in html
 var lat; // user's latitude
 var lon; // user's longitude
-var parks = [
-    ["park0", 45.230489, -81.521887, "Bruce Peninsula National Park"],
-    ["park1", 44.874301, -79.870020, "Georgian Bay Islands National Park"],
-    ["park2", 41.962795, -82.518484, "Point Pelee National Park"]
-];
+var parks;
 
 // get user location by using HTML5 Geolocation API, then transfer to userLocation() function
-function getLocation() {
-    if (navigator.geolocation) {
+function getLocation(Parks) {
+    if (navigator.geolocation) 
+    {
+        parks = Parks;
         navigator.geolocation.getCurrentPosition(userLocation);
-    }else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+    }
+    else 
+    {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+    
+    return closest;
 }
 
 
@@ -26,22 +28,20 @@ function userLocation(position) {
     lat = position.coords.latitude; // user's latitude
     lon = position.coords.longitude; // user's longitude
     // call NearestPark function with the user location
-    NearestPark(position.coords.latitude, position.coords.longitude);
+    NearestParks(position.coords.latitude, position.coords.longitude);
 }
 
-function NearestPark(latitude, longitude) {
+function NearestParks(latitude, longitude) {
     var minDis = 99999; // set the min distence 
 
-    for (index = 0; index < parks.length; ++index) {
+    for (var i = 0; i < parks.length; i++) {
         // Call PythagorasEquirectangular() 
-        var dis = CalculateDis(latitude, longitude, parks[index][1], parks[index][2]);
+        var dis = CalculateDis(latitude, longitude, parks[i]['latitude'], parks[i]['longitude']);
         if (dis < minDis) {
-            closest = index; // Get the index number of the closest distence
+            closest = parks[i]; // Get the index number of the closest distence
             minDis = dis;
         }
     }
-    document.getElementById("find-me").innerHTML = (parks[closest][3]);
-    // get the var with id and put the results name back
 }
 
 // Calculate each distence between two pair of latitude and longtitude
