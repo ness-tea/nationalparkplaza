@@ -23,9 +23,7 @@
                     <!-- This code makes a submit buttom after search box -->
                 </form>
             </div>
-            <br>
             <h3>OR</h3>
-            <br>
             <p>Search a Park by rating:</p>
             <!-- Adds a drop-down for searching a park by rating -->
             <form action="phpfunctions/search.php" meethod="post">
