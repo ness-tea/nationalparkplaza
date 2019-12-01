@@ -33,7 +33,7 @@ window.onload = function () {
 function initResultMap() {
     // Put the map results in the location id named map 
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 6,
+        zoom: 3,
         center: centerCords
     });
     // Call add Marker()
