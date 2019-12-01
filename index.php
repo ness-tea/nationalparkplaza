@@ -44,7 +44,7 @@
             <div class="search-inline">
                 <p>Search by Location</p>
                 <form action="search.php" method="post">
-                    <button name="location" onclick="getLocation()">Find Near Me</button>
+                    <button name="location">Find Near Me</button>
                 </form>
             </div>
 
