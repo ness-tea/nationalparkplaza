@@ -143,7 +143,8 @@
                 // Loop through $reviews to display all user reviews
                 foreach ($reviews as $review)
                 {
-                    echo "<span class=\"heading1\">".$review[0]['email']."</span>";
+                    $usr = strtok($review[0]['email'], '@')
+                    echo "<span class=\"heading1\">".$usr."</span>";
                     
                     // Display stars equal to the number of rating
                     for ($x = 0; $x < (int)$review[0]['rating']; $x++)
