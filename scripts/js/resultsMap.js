@@ -42,7 +42,7 @@ function initResultMap() {
 
 // Add marker on map
 function addMarkersOnMap() {
-    for (var i = 0; i < markersOnMap.length; i++) {
+    for (var i = 0; i <= markersOnMap.length; i++) {
         // The content detais shows when click the mark
         // incluing the park name, short infor and link to individual park page
         var contentString = '<div id="content"><h4 style="color:black" >' + markersOnMap[i].placeName +
