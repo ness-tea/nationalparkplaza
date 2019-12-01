@@ -101,7 +101,7 @@ $conn = null;
                         // Displaying html code
                         echo "<tr>";
                         echo "<td>";
-                        echo "<h4><a href=\"park.php\">".$park['parkname']."</a></h4>";
+                        echo "<h4><a href=\"park.php?something=".$park['park_id']."\">".$park['parkname']."</a></h4>";
                         echo "<td>".$park['dsc']."</td>";
                         echo "</tr>";   
                     }
