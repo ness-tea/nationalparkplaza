@@ -29,7 +29,7 @@ try {
         // User is searching by park name.
         $query = "SELECT * FROM Parks";
         $stmt = $conn->prepare($query);
-        $stmt->execute($search_name);
+        $stmt->execute();
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         print_r($search_name);
