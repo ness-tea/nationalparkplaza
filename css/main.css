@@ -338,7 +338,8 @@ th {
 
 /* The heading style of the individual review on object pages*/
 .heading1 {
-    font-size: 15px;
+    font-weight:700;
+    font-size: 18px;
     margin-right: 15px;
 }
 

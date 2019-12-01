@@ -66,76 +66,22 @@
         <div class="total-review">
             <h2>Visitor Reviews</h2>
             <!-- This code add five star format with checked or uncheck results -->
-            <span class="heading">4.8 out of 5</span>
+            <span class="heading">
+                <?php
+                    $query = "SELECT AVG(CAST(rating AS int)) FROM Reviews WHERE parkname = (SELECT parkname FROM Parks WHERE park_id = ?)";
+                    $stmt = $conn->prepare($query);
+                    $stmt->execute(array($parkid));  
+
+                    $avg = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    echo $avg;
+                ?> out of 5</span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             
-            <!-- This code add five bar format of the total reviews -->
-            <div class="row">
-                <!-- The left side of the bar format -->
-                <div class="side">
-                    <div>5 star</div>
-                </div>
-                <!-- The middle side of the bar format -->
-                <div class="middle">
-                    <div class="bar-container">
-                        <div class="bar-5"></div>
-                    </div>
-                </div>
-                <!-- The right side of the bar format -->
-                <div class="side right">
-                    <div>3000</div>
-                </div>
-                <div class="side">
-                    <div>4 star</div>
-                </div>
-                <div class="middle">
-                    <div class="bar-container">
-                        <div class="bar-4"></div>
-                    </div>
-                </div>
-                <div class="side right">
-                    <div>283</div>
-                </div>
-                <div class="side">
-                    <div>3 star</div>
-                </div>
-                <div class="middle">
-                    <div class="bar-container">
-                        <div class="bar-3"></div>
-                    </div>
-                </div>
-                <div class="side right">
-                    <div>15</div>
-                </div>
-                <div class="side">
-                    <div>2 star</div>
-                </div>
-                <div class="middle">
-                    <div class="bar-container">
-                        <div class="bar-2"></div>
-                    </div>
-                </div>
-                <div class="side right">
-                    <div>4</div>
-                </div>
-                <div class="side">
-                    <div>1 star</div>
-                </div>
-                <div class="middle">
-                    <div class="bar-container">
-                        <div class="bar-1"></div>
-                    </div>
-                </div>
-                <div class="side right">
-                    <div>8</div>
-                </div>
-            </div>
-        </div>
-        <br><br>
         <!-- This is the section of individual reviews -->
         <div class="indi-review">
 
