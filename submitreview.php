@@ -24,7 +24,7 @@
 
                     <!-- HTML validation - required specified for name field-->
                     <!-- Max length of park name input is set to 50 characters -->
-                    <input required type="text" placeholder="Type a Park name" id="parkname" name="parkname" maxlength="50">
+                    <input required type="text" placeholder="Type a Park name" id="parkname" name="parkname" maxlength="100">
                     <br>
                     <span style="font-size: 0.8em">
                         Enter the name of the park. E.g. Bruce Peninsula National Park
