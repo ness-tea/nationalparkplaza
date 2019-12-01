@@ -135,6 +135,7 @@
                 </div>
             </div>
         </div>
+        <br><br>
         <!-- This is the section of individual reviews -->
         <div class="indi-review">
 
@@ -144,7 +145,7 @@
                 {
                     // Display name of reviewer
                     $usr = strtok($review['email'], '@');
-                    echo "<span class=\"heading1\">".$usr."</span>";
+                    echo "<h2 style=font-weight:bold>".$usr."</h2>";
                     
                     // Display stars equal to the number of rating
                     for ($x = 0; $x < (int)$review['rating']; $x++)
