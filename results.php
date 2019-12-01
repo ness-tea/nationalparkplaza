@@ -11,10 +11,7 @@
             <div class="results-table">
                <!-- This is the section of embed a live map using Javascript -->
                 <div id="map">
-
-
                     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultsMap"></script>
-
                 </div>
                 <br /><br />
 
