@@ -37,7 +37,6 @@ try {
     }
     else if (isset($_POST['location']))
     {   
-        print_r("Location is set");
         // Save all parks and do post processing with JS later
         $query = "SELECT * From Parks";
         $stmt = $conn->prepare($query);
@@ -86,11 +85,19 @@ $conn = null;
     // Retrieve matching parks from php array using json_encode()
     var searchParks = <?php echo json_encode($parks); ?>;
 
-    // Add the array elements as markers for google API live map
-    for (var i = 0; i < searchParks.length; i++)
+    if (<?php echo isset($_POST['location']) ?>)
     {
-        addMarker(searchParks[i]);
-    
+        // Find parks near the user's location
+        var closest = getLocation(searchParks[i]);
+        addMarker(closest);
+    }
+    else
+    {
+        // Add the array elements as markers for google API live map
+        for (var i = 0; i < searchParks.length; i++)
+        {
+            addMarker(searchParks[i]);
+        }
     }
 </script>
 
