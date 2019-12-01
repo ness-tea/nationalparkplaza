@@ -15,11 +15,11 @@
             <div class="search-container">
                 <!-- This is the section of search by name box -->
                 <!-- Shows prompt before the search box -->
-                <p>Please enter the Park name you want to search.</p>
+                <p>Enter a Park you want to explore.</p>
                 <!-- This code makes a search box -->
-                <form>
+                <form action="phpfunctions/search.php" enctype="multipart/form-data" method="post">
                     <!-- This code makes show word "Search..." in search box -->
-                    <input type="buttom" placeholder="Search..." name="search">
+                    <input type="button" placeholder="Search..." name="search">
                     <!-- This code makes a submit buttom after search box -->
                 </form>
 
@@ -27,7 +27,7 @@
             <br>
             <p id="find-me">Search By Your Location：</p>
             <!-- Add a buttom which can be click and call the getLocation() function -->
-            <button onclick="getLocation()">Find park near me</button>
+            <button onclick="getLocation()">Find a Park Near Me</button>
 
             <div class="picture">
                 <picture>

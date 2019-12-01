@@ -1,46 +1,6 @@
 <!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="UTF-8" />
-    <!-- Name of site -->
-    <title>National Park Plaza</title>
-
-    <!-- Linking google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Forum|Julius+Sans+One|Lateef|Open+Sans&display=swap" rel="stylesheet">
-
-    <!-- Linking the css file that will style the html -->
-    <link href="css/main.css" type="text/css" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/header-ico.png">
-    <script src="scripts/js/validation.js"></script>
-    <script src="scripts/js/resultsMap.js"></script>
-</head>
-
-<body>
-    <!-- Header and navigation bar layout. Same layout here used throughout all pages -->
-    <div class="header">
-        <h1 class="title">NATIONAL PARK PLAZA</h1>
-
-        <!-- All links in the nav bar are under unlisted list -->
-        <ul>
-            <li><a href="index.html">Search</a></li>
-            <li><a href="results.html">Parks</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">National Parks</a>
-                <div class="dropdown-content">
-                    <a href="object1.html">Bruce Peninsula National Park</a>
-                    <a href="object2.html">Georgian Bay Islands National Park</a>
-                    <a href="object3.html">Point Pelee National Park</a>
-                </div>
-            </li>
-            <!-- Marking the 'Submit a Park' tab as the active one for css styling -->
-            <li><a class="active" href="object_submission.html">Submit a Park</a></li>
-            <li><a href="registration.html">Registration</a></li>
-            <li><a href="login.html">LogIn</a></li>
-        </ul>
-    </div>
+<?php include('header.php'); ?>
 
     <!-- This is the section of results page body, which style defined in the css -->
     <div class="wrap-results">
@@ -51,6 +11,8 @@
             <div class="results-table">
                <!-- This is the section of embed a live map using Javascript -->
                 <div id="map">
+
+
                     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultsMap"></script>
 
                 </div>
