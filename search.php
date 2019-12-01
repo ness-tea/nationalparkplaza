@@ -27,7 +27,7 @@ try {
     if (isset($_POST['name']))
     {   
         // User is searching by park name.
-        $query = "SELECT * FROM Parks WHERE parkname = ?";
+        $query = "SELECT * FROM Parks";
         $stmt = $conn->prepare($query);
         $stmt->execute(trim($search_name));
 
