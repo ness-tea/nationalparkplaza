@@ -20,6 +20,8 @@
             <img src="assets/acorn.jpg" alt="acorn">
         </picture>
 
+        <?php echo "<p><a href=\"submitreview.php?parkid=".$park[0]['park_id']."\" class=\"buttonReview\">Write a review</a></p>" ?>
+
         <h2>General Park Information</h2>
 
         <!-- Use PHP to fill in general park info -->
@@ -91,17 +93,6 @@
         <br>
         <?php echo "<p><a href=\"submitreview.php?parkid=".$park[0]['park_id']."\" class=\"buttonReview\">Write a review</a></p>" ?>
         <br>
-        <h3>Add a Rating:</h3>
-        <select required name="rating">
-            <option value="5">5 star</option>
-            <option value="4">4 star</option>
-            <option value="3">3 star</option>
-            <option value="2">2 star</option>
-            <option value="1">1 star</option>
-        </select>
-        <br>
-        <h3>Write a Review:</h3>
-        <textarea required rows="3" cols="50" placeholder="Enter your review of the park" name="review" maxlength="300"></textarea>
     </div>
 </div>
 

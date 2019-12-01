@@ -427,14 +427,15 @@ th {
 }
 
 .buttonReview {
-    background-color: skyblue;
+    background-color: #9bb09d;
     border: none;
+    border-radius: 2px;
     color: black;
     padding: 8px 10px;
     text-align: center;
     text-decoration: none;    
     display: inline-block;
-    font-size: 12px;
+    font-size: 18px;
     margin: 2px 2px;
     cursor: pointer;
 }
