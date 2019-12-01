@@ -290,7 +290,7 @@ input[type=buttom] {
     /* Add icon inside the text field. */
     background-image: url('../assets/searchicon.png');
     /* The icon position inside the text field. */
-    background-position: 7px 7px;
+    background-position: 5px 5px;
     background-repeat: no-repeat;
     /* Use the padding property to add space inside the text field. */
     padding: 12px 20px 12px 40px;
