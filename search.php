@@ -78,25 +78,26 @@ $conn = null;
                     if (parks == NULL)
                     {
                         // If there's been no search query, list all maps.
-                        <?php
-                            $queryparks = "SELECT * FROM Parks";
-                            $stmt = $conn->prepare($queryparks);
-                            $stmt->execute();
-                            
-                            $allparks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        ?>
-                        
-                        var allparks = <?php echo json_encode($allparks); ?>
+                        var allparks = <?php $queryparks = "SELECT * FROM Parks";
+                                             $stmt = $conn->prepare($queryparks);
+                                             $stmt->execute();
+                                            
+                                             $allparks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                             echo json_encode($allparks);
+                                        ?>;
 
                         for (var i = 0; i < allparks.length; i++)
                         {
                             addMarker(allparks[i]);
                         }
                     }
-                    // Add the array elements as markers for google API live map
-                    for (var i = 0; i < parks.length; i++)
+                    else
                     {
-                        addMarker(parks[i]);
+                        // Add the array elements as markers for google API live map
+                        for (var i = 0; i < parks.length; i++)
+                        {
+                            addMarker(parks[i]);
+                        }
                     }
                 </script>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultMap"></script>
