@@ -21,6 +21,12 @@ try {
     $stmt->execute(array($parkid));
 
     $park = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $query = "SELECT * FROM Reviews WHERE parkname = (SELECT parkname FROM Parks WHERE park_id = ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute(array($parkid));    
+
+    $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 catch(PDOException $e)
 {

@@ -66,22 +66,13 @@
         <div class="total-review">
             <h2>Visitor Reviews</h2>
             <!-- This code add five star format with checked or uncheck results -->
-            <span class="heading">
-                <?php
-                    $query = "SELECT AVG(CAST(rating AS INT)) FROM Reviews WHERE parkname = ?";
-                    $stmt = $conn->prepare($query);
-                    $stmt->execute(array($park[0]['parkname']));
-
-                    $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                    print_r($res[0]);
-                 ?> out of 5</span>
+            <span class="heading">4.8 out of 5</span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
-
+            
             <!-- This code add five bar format of the total reviews -->
             <div class="row">
                 <!-- The left side of the bar format -->
@@ -147,14 +138,31 @@
         <!-- This is the section of individual reviews -->
         <div class="indi-review">
             <h4>Reviews</h4>
-            <!-- This code add name of the reviewer -->
+
+            <?php
+                // Loop through $reviews to display all user reviews
+                foreach ($reviews as $review)
+                {
+                    echo "<span class=\"heading1\">".$review[0]['email']."</span>";
+                    
+                    // Display stars equal to the number of rating
+                    for ($x = 0; $x < (int)$review[0]['rating']; $x++)
+                    {
+                        echo "<span style=font-size:100% class=\"fa fa-star checked\"></span>";
+                    }
+                    echo "<p>".$review[0]['review']."</p>";
+                }
+            ?>
+
+            <!-- Name of the reviewer -->
             <span class="heading1">Allan McGlone</span>
-            <!-- This code add five smaller star format with checked or uncheck results -->
+            <!-- Adds visual 5 star rating -->
             <span style=font-size:100% class="fa fa-star checked"></span>
             <span style=font-size:100% class="fa fa-star checked"></span>
             <span style=font-size:100% class="fa fa-star checked"></span>
             <span style=font-size:100% class="fa fa-star checked"></span>
             <span style=font-size:100% class="fa fa-star"></span>
+            <!-- User's review -->
             <p>Absolutely stunning park. The grotto is always busy but if you can get there and there's less then 20 people there you will have incredible views all to yourself. The look out spot is especially gorgeous and I'd highly recommend the little hike over to it. Make sure you have grippy shoes as you will be climbing on flat rocks at an angle.</p>
             <span class="heading1">Warren Zahari</span>
             <span style=font-size:100% class="fa fa-star checked"></span>
