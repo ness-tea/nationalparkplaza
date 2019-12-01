@@ -1,5 +1,5 @@
 # National Park Plaza
-#### 4WWC3 Web Project
+#### 4WW3 Web Project
 
 URL: **https://nationalparkplaza.ga/**
 
@@ -7,7 +7,7 @@ The term project for 4WW3 (Web Systems and Computing).
 
 The National Park Plaza site allows users to do the following:
 - Browse parks across Canada and provide readily accessible information. 
-- Find Canadian parks nearby based on their location.
+- Query parks based on different types of input (name or ratings).
 - Register an account to write reviews for and submit new parks to the database.
 
 ## Collaborators:
