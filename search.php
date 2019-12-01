@@ -47,6 +47,16 @@ try {
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } 
 
+    if ($stmt->rowCount() == 0)
+    {
+        // If no parks match user's queries, display all parks in database
+        $query = "SELECT * From Parks";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+
+        $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 catch(PDOException $e)
 {
