@@ -15,19 +15,30 @@
             <div class="search-container">
                 <!-- This is the section of search by name box -->
                 <!-- Shows prompt before the search box -->
-                <p>Please enter the Park name you want to search.</p>
-                <!-- This code makes a search box -->
+                <p>Search a Park by name:</p>
+                <!-- Make a search box for searching a park by name -->
                 <form action="phpfunctions/search.php" method="post">
                     <!-- This code makes show word "Search..." in search box -->
-                    <input type="buttom" placeholder="Search..." id="search" name="search">
+                    <input type="buttom" placeholder="Search..." id="name" name="name">
                     <!-- This code makes a submit buttom after search box -->
                 </form>
-
             </div>
             <br>
-            <p id="find-me">Search By Your Location：</p>
-            <!-- Add a buttom which can be click and call the getLocation() function -->
-            <button onclick="getLocation()">Find park near me</button>
+            <h3>OR</h3>
+            <br>
+            <p>Search a Park by rating:</p>
+            <!-- Adds a drop-down for searching a park by rating -->
+            <form action="phpfunctions/search.php" meethod="post">
+                <div class="styled">
+                    <select id="rating" name="rating" onchange="this.form.submit()">
+                        <option value="5">5 star</option>
+                        <option value="4">4 star</option>
+                        <option value="3">3 star</option>
+                        <option value="2">2 star</option>
+                        <option value="1">1 star</option>
+                    </select>
+                </div>
+            </form>
 
             <div class="picture">
                 <picture>
