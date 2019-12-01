@@ -67,7 +67,7 @@ function initBruceMap() {
 function populatePark(park)
 {
     // Fill in the Park struct
-    var Park = {
+    Park = {
         lat: parseInt(park['latitude']),
         lng: parseInt(park['longitude'])
     };
