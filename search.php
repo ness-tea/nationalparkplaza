@@ -27,26 +27,24 @@ try {
     if (isset($_POST['name']))
     {   
         // User is searching by park name.
-        // Find all parks in the database matching user's input
+        // Find all parks in the database matching user's name input
         $query = "SELECT * FROM Parks WHERE parkname = ?";
         $stmt = $conn->prepare($query);
         $stmt->execute(array($search_name));
 
-        // Save all parks matching user's input into an array
+        // Save all parks matching user's park name in an array
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Find all reviews in the database for park matching user's input
-        $query = "SELECT * FROM Reviews WHERE parkname = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->execute(array($search_name));
-
-        // Save all reviews for park in an array
-        $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     else
     {
         // User is searching by park rating.
-        echo "Searching by rating.";
+        // Find all parks in the database for park matching user's rating input
+        $query = "SELECT * FROM Parks WHERE rating = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->execute(array($search_rating));
+
+        // Save all parks matching user's rating in an array
+        $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } 
 
 }
@@ -80,7 +78,7 @@ $conn = null;
                     // Add the array elements as markers for google API live map
                     for (var i = 0; i < parks.length; i++)
                     {
-                        document.write(parks[i]);
+                        addMarker(parks[i]);
                     }
                 </script>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultsMap"></script>

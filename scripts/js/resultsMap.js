@@ -40,6 +40,21 @@ var markersOnMap = [{
     }
 ];
 
+function addMarker(park)
+{
+    var marker = {
+        placeName: park['parkname'],
+        LatLng: [{
+            lat: park['latitude'],
+            lng: park['longitude']
+        }],
+        placeInfo: park['dsc'],
+        placeHref: "park.php"
+    }
+
+    markersOnMap.push(marker);    
+}
+
 // Load the google map when the page is load and call the initMap() 
 window.onload = function () {
     initResultMap();
@@ -52,10 +67,10 @@ function initResultsMap() {
         center: centerCords
     });
     // Call add Marker()
-    addMarker();
+    addMarkersOnMap();
 }
 // Add marker on map
-function addMarker() {
+function addMarkersOnMap() {
     for (var i = 0; i < markersOnMap.length; i++) {
         // The content detais shows when click the mark
         // incluing the park name, short infor and link to individual park page
