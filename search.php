@@ -81,7 +81,7 @@ $conn = null;
                         addMarker(parks[i]);
                     }
                 </script>
-                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultsMap"></script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultMap"></script>
             </div>
             <br /><br />
 

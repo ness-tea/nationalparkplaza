@@ -49,8 +49,9 @@ function addMarker(park)
 window.onload = function () {
     initResultMap();
 };
+
 // Initial the google map with center and zoom 
-function initResultsMap() {
+function initResultMap() {
     // Put the map results in the location id named map 
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 6,
@@ -59,6 +60,7 @@ function initResultsMap() {
     // Call add Marker()
     addMarkersOnMap();
 }
+
 // Add marker on map
 function addMarkersOnMap() {
     for (var i = 0; i < markersOnMap.length; i++) {
