@@ -9,6 +9,21 @@ var centerCords = {
 // Marker var list with the parks name, latlongtitude, plcae infor and a link url
 var markersOnMap = [];
 
+function addPlaceHoldMarker() 
+{
+    var marker = {
+        placeName: "hello",
+        LatLng: [{
+            lat: 0,
+            lng: 0
+        }],
+        placeInfo: "things",
+        placeHref: "park.php"
+    };
+
+    markersOnMap.push(marker);
+}
+
 function addMarker(park)
 {
     var marker = {
@@ -19,7 +34,7 @@ function addMarker(park)
         }],
         placeInfo: park['dsc'],
         placeHref: "park.php"
-    }
+    };
 
     markersOnMap.push(marker);    
 }
