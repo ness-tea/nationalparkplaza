@@ -68,8 +68,8 @@ function populatePark(park)
 {
     // Fill in the Park struct
     var Park = {
-        lat: park['latitude'],
-        lng: park['longitude']
+        lat: parseInt(park['latitude']),
+        lng: parseInt(park['longitude'])
     };
 }
 
