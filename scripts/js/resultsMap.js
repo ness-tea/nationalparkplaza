@@ -14,8 +14,8 @@ function addMarker(park)
     var marker = {
         placeName: park['parkname'],
         LatLng: [{
-            lat: park['latitude'],
-            lng: park['longitude']
+            lat: parseInt(park['latitude']),
+            lng: parseInt(park['longitude'])
         }],
         placeInfo: park['dsc'],
         placeHref: "park.php"
