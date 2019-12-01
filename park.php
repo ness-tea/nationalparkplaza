@@ -9,11 +9,12 @@
 
 <!-- JS script to add the marker for this park page before map load -->
 <script>
+
     //Retrieve matching parks from php array using json_encode()
     var thisPark = <?php echo json_encode($park); ?>;
 
     // Populate park points
-    populatePark(thisPark[0]);
+    addMarker(thisPark[0]);
 </script>
 
 <!-- This is the section of object page body, which style defined in the css -->
@@ -63,7 +64,7 @@
         <!-- This code add a map picture with width and height we need -->
         <!-- This code add google mpas of the loction -->
         <div id="map">
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initParkMap"></script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultMap"></script>
         </div>
         <address>
             <p>Parks Canada Visitor Centre</p>
