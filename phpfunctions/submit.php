@@ -75,10 +75,11 @@ try {
             $stmt = $conn->prepare($query);
             $stmt->execute(array(':email'=> $_SESSION['email'], ':parkname'=> $pname, ':rating'=> $rating, ':review'=> $review));
 
+            print_r($pname);
             echo "Park review submitted successfully";
 
             // Redirect to page for this park page.
-            header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
+            header("Location: https://{$_SERVER['HTTP_HOST']}/search.php");
         }
         else
         {

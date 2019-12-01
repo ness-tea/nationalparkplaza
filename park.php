@@ -137,12 +137,12 @@
         </div>
         <!-- This is the section of individual reviews -->
         <div class="indi-review">
-            <h4>Reviews</h4>
 
             <?php
                 // Loop through $reviews to display all user reviews
                 foreach ($reviews as $review)
                 {
+                    // Display name of reviewer
                     $usr = strtok($review[0]['email'], '@');
                     echo "<span class=\"heading1\">".$usr."</span>";
                     
@@ -151,34 +151,12 @@
                     {
                         echo "<span style=font-size:100% class=\"fa fa-star checked\"></span>";
                     }
+
+                    // Reviewer's comments
                     echo "<p>".$review[0]['review']."</p>";
                 }
             ?>
 
-            <!-- Name of the reviewer -->
-            <span class="heading1">Allan McGlone</span>
-            <!-- Adds visual 5 star rating -->
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star"></span>
-            <!-- User's review -->
-            <p>Absolutely stunning park. The grotto is always busy but if you can get there and there's less then 20 people there you will have incredible views all to yourself. The look out spot is especially gorgeous and I'd highly recommend the little hike over to it. Make sure you have grippy shoes as you will be climbing on flat rocks at an angle.</p>
-            <span class="heading1">Warren Zahari</span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <p>Amazing park with some of the best spots to visit. The grotto is a favorite but be warned it gets busy and you need to advance book. If you don't get in the grotto don't worry, there are so many beautiful spots that are also worth it. Just about anywhere on the water is fantastic and the Bruce trail is great to hike if you are up for it.</p>
-            <span class="heading1">Afia A</span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <span style=font-size:100% class="fa fa-star checked"></span>
-            <p>This place is absolutely gorgeous and breathtaking. I took the speed boat to Flowerpot Island and headed back to the Grotto afterwards. The grotto is always packed in summer and you should call ahead of time to book a parking space before going. I highly recommend this place if you're visiting Ontario.</p>
         </div>
         <br><br>
         <h3>Add a Rating:</h3>
