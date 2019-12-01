@@ -27,13 +27,21 @@ try {
     if (isset($_POST['name']))
     {   
         // User is searching by park name.
+        // Find all parks in the database matching user's input
         $query = "SELECT * FROM Parks WHERE parkname = ?";
         $stmt = $conn->prepare($query);
         $stmt->execute(array($search_name));
 
+        // Save all parks matching user's input into an array
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        print_r($search_name);
-        print_r($parks);
+
+        // Find all reviews in the database for park matching user's input
+        $query = "SELECT * FROM Reviews WHERE parkname = ?"
+        $stmt = $conn->prepare($query);
+        $stmt->execute(array($search_name));
+
+        // Save all reviews for park in an array
+        $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     else
     {
@@ -65,6 +73,16 @@ $conn = null;
         <div class="results-table">
             <!-- Embedding a live map using Javascript -->
             <div id="map">
+                <script>
+                    // Retrieve matching parks from php array using json_encode()
+                    var parks = <?php echo json_encode($parks); ?>;
+
+                    // Add the array elements as markers for google API live map
+                    for (var i = 0; i < parks.length; i++)
+                    {
+                        document.write(parks[i]);
+                    }
+                </script>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultsMap"></script>
             </div>
             <br /><br />

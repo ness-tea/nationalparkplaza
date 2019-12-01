@@ -39,6 +39,7 @@ var markersOnMap = [{
 
     }
 ];
+
 // Load the google map when the page is load and call the initMap() 
 window.onload = function () {
     initResultMap();
