@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Database access credentials
 $servername = "nationalparkplazadb.cjpr4ybdu2p3.us-east-2.rds.amazonaws.com";
 $username = "truonv1";
