@@ -26,7 +26,7 @@
             <h3>OR</h3>
             <p>Search a Park by rating:</p>
             <!-- Adds a drop-down for searching a park by rating -->
-            <form action="phpfunctions/search.php" meethod="post">
+            <form action="search.php" meethod="post">
                 <div class="styled">
                     <select id="rating" name="rating" onchange="this.form.submit()">
                         <option disabled selected value>Select star...</option>
