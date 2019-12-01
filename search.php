@@ -74,27 +74,30 @@ $conn = null;
     include('menu.php');
 ?>
 
+<script>
+    // Retrieve matching parks from php array using json_encode()
+    var parks = <?php echo json_encode($parks); ?>;
+
+    // Add the array elements as markers for google API live map
+    for (var i = 0; i < parks.length; i++)
+    {
+        addMarker(parks[i]);
+    
+    }
+</script>
+
 <!-- This is the section of results page body, which style defined in the css -->
 <div class="wrap-results">
     <div class="main" id="indent">
 
         <h1>List of National Parks</h1>
+
         <?php echo $nomatch == true ? 'No parks matched your query.':NULL; ?>
+        
         <!-- This is the section of results table, which style defined in the css -->
         <div class="results-table">
             <!-- Embedding a live map using Javascript -->
             <div id="map">
-                <script>
-                    // Retrieve matching parks from php array using json_encode()
-                    var parks = <?php echo json_encode($parks); ?>;
-
-                    // Add the array elements as markers for google API live map
-                    for (var i = 0; i < parks.length; i++)
-                    {
-                        addMarker(parks[i]);
-                    
-                    }
-                </script>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultMap"></script>
             </div>
             <br /><br />
@@ -108,10 +111,14 @@ $conn = null;
                     <th>Name</th>
                     <th>Information</th>
                 </tr>
+
+                <!-- Use PHP to populate results page table with parks matching the user's query -->
                 <?php
+
+                    // Loop through each park in the parks array containing all records matching user's query
                     foreach ($parks as $park)
                     {
-                        // Displaying html code
+                        // Markdown for html code
                         echo "<tr>";
                         echo "<td>";
                         echo "<h4><a href=\"park.php?parkid=".$park['park_id']."\">".$park['parkname']."</a></h4>";

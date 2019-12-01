@@ -13,7 +13,7 @@ $dbname = "nationalparkplaza";
 // Reformat parkname input to only contain relevant keywords
 $pname = str_ireplace("park", "", $_POST['parkname']);    // Remove any instances of park
 $pname = str_ireplace("national", "", $pname);      // Remove any instances of national
-$pname = ucwords(strtolower(trim($pname)));  // Trim leading/following white spaces, convert string to lowercase, then capitlize first letter of every word.
+$pname = trim(ucwords(strtolower($pname)));  // Trim leading/following white spaces, convert string to lowercase, then capitlize first letter of every word.
 
 $desc = $_POST['desc'];
 $activ = $_POST['activities'];

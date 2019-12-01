@@ -66,12 +66,22 @@
         <div class="total-review">
             <h2>Visitor Reviews</h2>
             <!-- This code add five star format with checked or uncheck results -->
-            <span class="heading">4.8 out of 5</span>
+            <span class="heading">
+                <?php
+                    $query = "SELECT AVG(CAST(rating AS INT)) FROM Reviews WHERE parkname = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->execute(array($park[0]['parkname']));
+
+                    $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    print_r($res[0]);
+                 ?> out of 5</span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
             <span style=font-size:200% class="fa fa-star checked"></span>
+
             <!-- This code add five bar format of the total reviews -->
             <div class="row">
                 <!-- The left side of the bar format -->
