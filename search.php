@@ -28,7 +28,7 @@ try {
     {   
         // User is searching by park name.
         // Find all parks in the database matching user's name input
-        $query = "SELECT * FROM Parks WHERE parkname LIKE %?%";
+        $query = "SELECT * FROM Parks WHERE parkname LIKE '%\?%'";
         $stmt = $conn->prepare($query);
         $stmt->execute(array($search_name));
 
