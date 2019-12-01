@@ -8,12 +8,18 @@ $username = "truonv1";
 $password = "12345678";
 $dbname = "nationalparkplaza";
 
-// Store user input from submit.php (Park submission)
-$pname = $_POST['parkname'];
+// Store user input from submitpark.php
+
+// Reformat parkname input to only contain relevant keywords
+$pname = str_ireplace("park", "", $_POST['parkname']);    // Remove any instances of park
+$pname = str_ireplace("national", "", $pname);      // Remove any instances of national
+$pname = ucwords(strtolower(trim($pname)));  // Trim leading/following white spaces, convert string to lowercase, then capitlize first letter of every word.
+
 $desc = $_POST['desc'];
 $longitude = $_POST['longitude'];
 $latitude = $_POST['latitude'];
 
+// Store user input from submitreview.php
 $rating = $_POST['rating'];
 $review = $_POST['review'];
 
