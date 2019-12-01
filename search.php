@@ -25,7 +25,12 @@ try {
     if (isset($_POST['name']))
     {   
         // User is searching by park name.
-        echo "Searching by name.";
+        $query = "SELECT * FROM Parks WHERE parkname = ?"
+        $stmt = $conn->prepare($query);
+        $stmt->execute($search_name);
+
+        $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        print_r($parks);
     }
     else
     {
@@ -55,7 +60,7 @@ $conn = null;
         <h1>List of National Parks</h1>
         <!-- This is the section of results table, which style defined in the css -->
         <div class="results-table">
-            <!-- This is the section of embed a live map using Javascript -->
+            <!-- Embedding a live map using Javascript -->
             <div id="map">
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultsMap"></script>
             </div>
