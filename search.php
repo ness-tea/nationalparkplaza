@@ -106,7 +106,7 @@ $conn = null;
                                     <h4><a href="park.php">$park['parkname']</a></h4>
                                 </td>
                                 <td>$park['dsc']</td>
-                            </tr>`
+                            </tr>`;
                     }
                 ?>
                 <!-- <tr>
