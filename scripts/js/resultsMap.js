@@ -42,12 +42,13 @@ function initResultMap() {
 
 // Add marker on map
 function addMarkersOnMap() {
-    for (var i = 0; i <= markersOnMap.length; i++) {
-        // The content detais shows when click the mark
+    for (var i = 0; i < markersOnMap.length; i++) {
+        // The content details show when clicking on the marker
         // incluing the park name, short infor and link to individual park page
         var contentString = '<div id="content"><h4 style="color:black" >' + markersOnMap[i].placeName +
             '</h4><p>' + markersOnMap[i].placeInfo + '</p>' +
             '<a href=' + markersOnMap[i].placeHref + '>View More Details</a>' + '</div>';
+        print(contentString);
         // Set google maps marker position
         const marker = new google.maps.Marker({
             position: markersOnMap[i].LatLng[0],
