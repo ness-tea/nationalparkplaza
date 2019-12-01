@@ -31,12 +31,12 @@ var markersOnMap = [{
 function addMarker(park)
 {
     var marker = {
-        placeName: park['parkname'],
+        placeName: park[3],
         LatLng: [{
-            lat: park['latitude'],
-            lng: park['longitude']
+            lat: park[1],
+            lng: park[2]
         }],
-        placeInfo: park['dsc'],
+        placeInfo: "hello",
         placeHref: "park.php"
     }
 
