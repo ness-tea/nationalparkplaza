@@ -43,6 +43,7 @@ try {
         $stmt->execute();
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $searchLocation = true;
     }
     else
     {
@@ -85,7 +86,7 @@ $conn = null;
     // Retrieve matching parks from php array using json_encode()
     var searchParks = <?php echo json_encode($parks); ?>;
 
-    if (<?php echo isset($_POST['location']) ?>)
+    if (<?php echo $searchLocation; ?>)
     {
         // Find parks near the user's location
         var closest = getLocation(searchParks[i]);
