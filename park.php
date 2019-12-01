@@ -2,17 +2,14 @@
 
 <?php include('header.php'); ?>
 <?php include('menu.php'); ?>
-<?php
-    $url = "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-    $parkid = $_GET['something']; 
-?>
+<?php include('phpfunctions/findparkbyid.php'); ?>
 
 <!-- This is the section of object page body, which style defined in the css -->
 <div class="wrap-object">
     <div class="object" id="indent">
         
     <!-- This is the section of logo, which style defined in the css -->
-        <h1 class="acorn-logo">BRUCE PENINSULA NATIONAL PARK</h1>
+        <h1 class="acorn-logo"><?php echo $park[0]['parkname'] ?></h1>
         
         <!-- The tags will present the images if the requirement specified by the 'media' attribute are satisfied. -->
         <picture class="acorn-logo" style="float:right">
