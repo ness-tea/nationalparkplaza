@@ -10,7 +10,7 @@ $dbname = "nationalparkplaza";
 // Reformat parkname input to only contain relevant keywords
 $pname = str_ireplace("park", "", $_POST['name']);    // Remove any instances of park
 $pname = str_ireplace("national", "", $pname);      // Remove any instances of national
-$search_name = ucwords(strtolower(trim($pname)));  // Trim leading/following white spaces, convert string to lowercase, then capitlize first letter of every word.
+$search_name = trim(ucwords(strtolower($pname)));  // Trim leading/following white spaces, convert string to lowercase, then capitlize first letter of every word.
 
 // Store user input if searched by rating
 // Because we are using submit onclick for rating search, store the URL as a string first and
@@ -27,9 +27,9 @@ try {
     if (isset($_POST['name']))
     {   
         // User is searching by park name.
-        $query = "SELECT * FROM Parks";
+        $query = "SELECT * FROM Parks WHERE parkname = ?";
         $stmt = $conn->prepare($query);
-        $stmt->execute();
+        $stmt->execute($search_name);
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         print_r($parks);
