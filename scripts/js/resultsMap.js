@@ -8,16 +8,6 @@ var centerCords = {
 };
 // Marker var list with the parks name, latlongtitude, plcae infor and a link url
 var markersOnMap = [{
-        placeName: "Bruce Peninsula National Park",
-        LatLng: [{
-            lat: 45.230489,
-            lng: -81.521887
-        }],
-        placeInfo: "Bruce Peninsula National Park beckons hikers to travel woodland trails, swimmers to refresh in clear waters, explorers to discover the rugged limestone coast and campers to revel at a stunning night sky.",
-        placeHref: "object1.html"
-
-    },
-    {
         placeName: "Georgian Bay Islands National Park",
         LatLng: [{
             lat: 44.874301,
