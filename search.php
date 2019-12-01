@@ -55,6 +55,8 @@ try {
 
         // Save all parks matching user's rating in an array
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
     } 
 
     if ($stmt->rowCount() == 0)
@@ -89,7 +91,7 @@ $conn = null;
     if (<?php echo $searchLocation; ?>)
     {
         // Find parks near the user's location
-        var closest = getLocation(searchParks[i]);
+        var closest = getLocation(searchParks);
         addMarker(closest);
     }
     else
