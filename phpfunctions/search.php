@@ -20,14 +20,14 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if (isset($_POST['rating']))
-    {
-        echo "Searching by rating.";
-    }
-    else if (isset($_POST['name']))
+    if (isset($_POST['name']))
     {
         echo "Searching by name.";
     }
+    else
+    {
+        echo "Searching by rating.";
+    } 
 
 }
 catch(PDOException $e)
