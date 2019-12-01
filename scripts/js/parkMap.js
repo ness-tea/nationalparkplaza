@@ -78,12 +78,12 @@ function initParkMap() {
     var map = new google.maps.Map(
         document.getElementById('map'), {
             zoom: 10,
-            center: Park
+            center: Bruce
         });
 
     // The marker positioned at park location
     var marker = new google.maps.Marker({
-        position: Park,
+        position: Bruce,
         map: map
     });
 }
