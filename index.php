@@ -28,7 +28,8 @@
             <!-- Adds a drop-down for searching a park by rating -->
             <form action="phpfunctions/search.php" meethod="post">
                 <div class="styled">
-                    <select id="rating" placeholder="Select star..." name="rating" onchange="this.form.submit()">
+                    <select id="rating" name="rating" onchange="this.form.submit()">
+                        <option disabled selected value>Select star...</option>
                         <option value="5">5 star</option>
                         <option value="4">4 star</option>
                         <option value="3">3 star</option>
