@@ -87,7 +87,6 @@ $conn = null;
 
             <table>
                 <col width="10">
-                <col width="5">
                 <col width="300">
                 <!-- Each table row is defined with the <tr> tag. -->
                 <tr>
@@ -95,7 +94,17 @@ $conn = null;
                     <th>Name</th>
                     <th>Information</th>
                 </tr>
-                
+                <?php
+                    foreach ($parks as $park)
+                    {
+                        // Displaying html code
+                        echo "<tr>";
+                        echo "<td>";
+                        echo "<h4><a href=\"park.php\">$park['parkname']</a></h4>";
+                        echo "<td>$park['dsc']</td>";
+                        echo "</tr>";   
+                    }
+                ?>
             </table>
 
         </div>
