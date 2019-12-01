@@ -27,9 +27,9 @@ try {
     if (isset($_POST['name']))
     {   
         // User is searching by park name.
-        $query = "SELECT * FROM Parks WHERE REPLACE(parkname, ' ', '') = REPLACE(?, ' ', '')";
+        $query = "SELECT * FROM Parks WHERE parkname = ?";
         $stmt = $conn->prepare($query);
-        $stmt->execute($search_name);
+        $stmt->execute(array($search_name));
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         print_r($search_name);
