@@ -261,15 +261,16 @@ form {
 
 .search-inline {
     display: inline-block;
-    margin-right: 15px;
+    float: left;
+    margin-right: 100px;
 }
 
 button {
     color: #6e6d6d;
     background: transparent;
     font-size: 15px;
-    border: 1px solid #ccc;
-    height: 30px; 
+    border: 1px solid #6e6d6d;
+    height: 28px; 
     width: 180px;
     border-radius: 4px;
     overflow: hidden;

@@ -35,6 +35,16 @@ try {
         // Save all parks matching user's park name in an array
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    else if (isset($_POST['location']))
+    {   
+        print_r("Location is set");
+        // Save all parks and do post processing with JS later
+        $query = "SELECT * From Parks";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+
+        $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     else
     {
         // User is searching by park rating.
