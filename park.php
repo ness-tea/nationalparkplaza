@@ -89,7 +89,7 @@
 
         </div>
         <br>
-        <p><a href="submitreview.php" class="buttonReview">Write a review</a></p>
+        <?php echo "<p><a href=\"submitreview.php?parkid=".$park[0]['park_id']."\">class=\"buttonReview\">Write a review</a></p>" ?>
         <br>
         <h3>Add a Rating:</h3>
         <select required name="rating">
