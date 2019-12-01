@@ -12,8 +12,8 @@ try {
     
     // SQL Create Users table
     $createUsers = "CREATE TABLE Users (
-        user_id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        fullname VARCHAR(50) NOT NULL,
+        usr_id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        fullname VARCHAR(100) NOT NULL,
         birthdate VARCHAR(30) NOT NULL,
         email VARCHAR(50) NOT NULL,
         pass VARCHAR(255) NOT NULL
@@ -40,14 +40,14 @@ try {
      // SQL Create Review table;
      $createReviews = "CREATE TABLE Reviews (
         reviews_id INT(16) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        email VARCHAR(50) NOT NULL,
+        email VARCHAR(100) NOT NULL,
         parkname VARCHAR(100) NOT NULL,
         rating VARCHAR(30) NOT NULL,
-        review VARCHAR(300)
+        review VARCHAR(1000)
         )";
     $conn->exec($createReviews);
 
-    echo "Review Table created successfully - ";
+    echo "Review Table created successfully";
     }
 catch(PDOException $e)
 {
