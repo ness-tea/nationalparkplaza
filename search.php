@@ -7,8 +7,10 @@ $username = "truonv1";
 $password = "12345678";
 $dbname = "nationalparkplaza";
 
-// Store user input if searched by name
-$search_name = $_POST['name'];
+// Reformat parkname input to only contain relevant keywords
+$pname = str_ireplace("park", "", $_POST['name']);    // Remove any instances of park
+$pname = str_ireplace("national", "", $pname);      // Remove any instances of national
+$search_name = ucwords(strtolower(trim($pname)));  // Trim leading/following white spaces, convert string to lowercase, then capitlize first letter of every word.
 
 // Store user input if searched by rating
 // Because we are using submit onclick for rating search, store the URL as a string first and

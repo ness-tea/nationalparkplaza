@@ -20,7 +20,7 @@ try {
         )";   
     $conn->exec($createUsers);
 
-    echo "Users Table created successfully";
+    echo -e "Users Table created successfully \n";
 
     // SQL Create Park table
     $createParks = "CREATE TABLE Parks (
@@ -32,7 +32,7 @@ try {
         )";
      $conn->exec($createParks);
 
-     echo "Park Table created successfully";
+     echo -e "Park Table created successfully \n";
 
      // SQL Create Review table;
      $createReviews = "CREATE TABLE Reviews (
@@ -44,7 +44,7 @@ try {
         )";
     $conn->exec($createReviews);
 
-    echo "Review Table created successfully";
+    echo -e "Review Table created successfully \n";
     }
 catch(PDOException $e)
 {
