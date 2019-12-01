@@ -67,10 +67,6 @@
             <h2>Visitor Reviews</h2>
             <?php
                 $query = "SELECT AVG(CAST(rating AS unsigned)) FROM Reviews WHERE parkname = (SELECT parkname FROM Parks WHERE park_id = ?)";
-                $stmt = $conn->prepare($query);
-                $stmt->execute(array($parkid));  
-
-                $avg = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ?>
             <!-- This code add five star format with checked or uncheck results -->
             <span class="heading"><?php echo $avg; ?> out of 5</span>
