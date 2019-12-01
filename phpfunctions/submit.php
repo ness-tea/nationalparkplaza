@@ -68,7 +68,7 @@ try {
 
             echo "Park review submitted successfully";
 
-            Redirect to page for this park page.
+            // Redirect to page for this park page.
             header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
         }
         else
