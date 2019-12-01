@@ -22,7 +22,7 @@
                 </form>
             </div>
             <br>
-        
+            <span>
             <p>Search a Park by rating:</p>
             <!-- Adds a drop-down for searching a park by rating -->
             <form action="search.php" meethod="post">
@@ -37,9 +37,10 @@
                     </select>
                 </div>
             </form>
-        
-            <button onclick="getLocation()">Find park near me</button>
-
+            </span>
+            <span>
+                <button onclick="getLocation()">Find park near me</button>
+            </span>
             <div class="picture">
                 <picture>
                     <!-- The tags will present the images if the requirement specified by the 'media' attribute are satisfied. -->
