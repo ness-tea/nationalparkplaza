@@ -14,6 +14,9 @@ $desc = $_POST['desc'];
 $longitude = $_POST['longitude'];
 $latitude = $_POST['latitude'];
 
+$rating = $_POST['rating'];
+$review = $_POST['review'];
+
 try {
     // Connect to the SQL databse using PDO
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
@@ -56,6 +59,7 @@ try {
         // Check if the park exists in the database.
         if ($stmt->fetchColumn() == 1)
         {
+            // print_R($_SESSION['email']);
             // The park exists. We can add the user's review to the database.
             $query = "INSERT INTO Reviews (email, parkname, rating, review)
                     VALUES (:email, :parkname, :rating, :review)";   
