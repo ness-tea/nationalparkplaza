@@ -15,29 +15,39 @@
             <div class="search-container">
                 <!-- This is the section of search by name box -->
                 <!-- Shows prompt before the search box -->
-                <p>Search a Park by name:</p>
+                <p>Search by Name:</p>
                 <!-- Make a search box for searching a park by name -->
                 <form action="search.php" method="post">
                     <input type="buttom" placeholder="Search..." id="name" name="name">
                 </form>
             </div>
-            <p>Search a Park by rating:</p>
-            <!-- Adds a drop-down for searching a park by rating -->
-            <form action="search.php" meethod="post">
-                <div class="styled">
-                    <select id="rating" name="rating" onchange="this.form.submit()">
-                        <option disabled selected value>Select star...</option>
-                        <option value="5">5 star</option>
-                        <option value="4">4 star</option>
-                        <option value="3">3 star</option>
-                        <option value="2">2 star</option>
-                        <option value="1">1 star</option>
-                    </select>
-                </div>
-            </form>
-            <br>
-            
-            <button onclick="getLocation()">Find park near me</button>
+
+            <!-- Put next 2 search queries in line -->
+            <div class="search-inline">
+                <p>Search by Rating:</p>
+                <!-- Adds a drop-down for searching a park by rating -->
+                <form action="search.php" method="post">
+                    <div class="styled">
+                        <select id="rating" name="rating" onchange="this.form.submit()">
+                            <option disabled selected value>Select star...</option>
+                            <option value="5">5 star</option>
+                            <option value="4">4 star</option>
+                            <option value="3">3 star</option>
+                            <option value="2">2 star</option>
+                            <option value="1">1 star</option>
+                        </select>
+                    </div>
+                </form>
+                <br>
+            </div>
+
+            <div class="search-inline">
+                <p>Search by Location</p>
+                <form action="search.php" method="post">
+                    <button onclick="getLocation()">Find Near Me</button>
+                </form>
+            </div>
+
 
             <div class="picture">
                 <picture>

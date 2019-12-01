@@ -259,13 +259,18 @@ form {
     margin-left: 20px;
 }
 
+.search-inline {
+    display: inline-block;
+    margin-right: 15px;
+}
+
 button {
     color: #6e6d6d;
     background: transparent;
     font-size: 15px;
     border: 1px solid #ccc;
     height: 30px; 
-    width: 130px;
+    width: 180px;
     border-radius: 4px;
     overflow: hidden;
     background: 96% / 20% no-repeat white;
