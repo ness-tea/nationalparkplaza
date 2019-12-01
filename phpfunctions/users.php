@@ -67,6 +67,7 @@ try {
         {
             // User exists
             echo "Login successful";
+            $_SESSION['fullname'] = $data[0]['fullname'];
             $_SESSION['email'] = $data[0]['email'];
             $_SESSION['loggedin'] = true;
             
