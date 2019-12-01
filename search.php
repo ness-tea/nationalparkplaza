@@ -75,6 +75,24 @@ $conn = null;
                     // Retrieve matching parks from php array using json_encode()
                     var parks = <?php echo json_encode($parks); ?>;
 
+                    if (parks == NULL)
+                    {
+                        // If there's been no search query, list all maps.
+                        <?php
+                            $queryparks = "SELECT * FROM Parks";
+                            $stmt = $conn->prepare($queryparks);
+                            $stmt->execute();
+                            
+                            $allparks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        ?>
+                        
+                        var allparks = <?php echo json_encode($allparks); ?>
+
+                        for (var i = 0; i < allparks.length; i++)
+                        {
+                            addMarker(allparks[i]);
+                        }
+                    }
                     // Add the array elements as markers for google API live map
                     for (var i = 0; i < parks.length; i++)
                     {
@@ -95,14 +113,29 @@ $conn = null;
                     <th>Information</th>
                 </tr>
                 <?php
-                    foreach ($parks as $park)
+                    if (empty($parks)
                     {
-                        // Displaying html code
-                        echo "<tr>";
-                        echo "<td>";
-                        echo "<h4><a href=\"park.php\">".$park['parkname']."</a></h4>";
-                        echo "<td>".$park['dsc']."</td>";
-                        echo "</tr>";   
+                        foreach ($allparks as $park)
+                        {
+                            // Displaying html code
+                            echo "<tr>";
+                            echo "<td>";
+                            echo "<h4><a href=\"park.php\">".$park['parkname']."</a></h4>";
+                            echo "<td>".$park['dsc']."</td>";
+                            echo "</tr>"; 
+                        }
+                    }
+                    else
+                    {
+                        foreach ($parks as $park)
+                        {
+                            // Displaying html code
+                            echo "<tr>";
+                            echo "<td>";
+                            echo "<h4><a href=\"park.php\">".$park['parkname']."</a></h4>";
+                            echo "<td>".$park['dsc']."</td>";
+                            echo "</tr>";   
+                        }
                     }
                 ?>
             </table>
