@@ -66,7 +66,7 @@ try {
     else if (isset($_POST['submitreview']))
     {
         // Check if the park exists in the database.
-        if ($stmt->fetchColumn() == 1)
+        if ($stmt->fetchColumn() != 0)
         {
             // print_R($_SESSION['email']);
             // The park exists. We can add the user's review to the database.

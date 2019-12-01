@@ -20,6 +20,7 @@
             <img src="assets/acorn.jpg" alt="acorn">
         </picture>
 
+        <br>
         <?php echo "<p><a href=\"submitreview.php?parkid=".$park[0]['park_id']."\" class=\"buttonReview\">Write a review</a></p>" ?>
 
         <h2>General Park Information</h2>
