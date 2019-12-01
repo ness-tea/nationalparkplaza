@@ -70,7 +70,7 @@ function populatePark(park)
     var Park = {
         lat: park['latitude'],
         lng: park['longitude']
-    }
+    };
 }
 
 function initParkMap() {
