@@ -259,6 +259,7 @@ form {
 }
 
 .styled select {
+    color: #ccc;
     background: transparent;
     width: 100%;
     font-size: 15px;
