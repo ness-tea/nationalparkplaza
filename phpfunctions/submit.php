@@ -56,13 +56,14 @@ try {
         // Check if the park exists in the database.
         if ($stmt->fetchColumn() == 1)
         {
-            // The park exists. We can add the user's review to the database.
-            $query = "INSERT INTO Reviews (email, parkname, rating, review)
-                    VALUES (:email, :parkname, :rating, :review)";   
-            $stmt = $conn->prepare($query);
-            $stmt->execute(array(':email'=> $_SESSION['email'], ':parkname'=> $pname, ':rating'=> $rating, ':review'=> $review));
+            print_R($_SESSION['email']);
+            // // The park exists. We can add the user's review to the database.
+            // $query = "INSERT INTO Reviews (email, parkname, rating, review)
+            //         VALUES (:email, :parkname, :rating, :review)";   
+            // $stmt = $conn->prepare($query);
+            // $stmt->execute(array(':email'=> $_SESSION['email'], ':parkname'=> $pname, ':rating'=> $rating, ':review'=> $review));
 
-            echo "Park review submitted successfully";
+            // echo "Park review submitted successfully";
 
             // Redirect to page for this park page.
             //header("Location: https://{$_SERVER['HTTP_HOST']}/login.php");
