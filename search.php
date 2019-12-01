@@ -29,10 +29,10 @@ try {
         // User is searching by park name.
         $query = "SELECT * FROM Parks WHERE parkname = ?";
         $stmt = $conn->prepare($query);
-        $stmt->execute($search_name);
+        $stmt->execute(trim($search_name));
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        print_r($search_name);
+        print_r($search_name);Bruce Peninsula 
     }
     else
     {
