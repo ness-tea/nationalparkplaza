@@ -21,8 +21,6 @@
                     <input type="buttom" placeholder="Search..." id="name" name="name">
                 </form>
             </div>
-            <br>
-            <span>
             <p>Search a Park by rating:</p>
             <!-- Adds a drop-down for searching a park by rating -->
             <form action="search.php" meethod="post">
@@ -37,10 +35,9 @@
                     </select>
                 </div>
             </form>
-            </span>
-            <span>
-                <button onclick="getLocation()">Find park near me</button>
-            </span>
+            <br>
+            <button onclick="getLocation()">Find park near me</button>
+
             <div class="picture">
                 <picture>
                     <!-- The tags will present the images if the requirement specified by the 'media' attribute are satisfied. -->
