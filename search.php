@@ -79,7 +79,7 @@ $conn = null;
     var searchParks = <?php echo json_encode($parks); ?>;
 
     // Add the array elements as markers for google API live map
-    for (var i = 0; i < searchParks.length; i++)
+    for (var i = 0; i <= searchParks.length; i++)
     {
         addMarker(searchParks[i]);
     
