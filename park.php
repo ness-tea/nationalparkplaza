@@ -150,7 +150,7 @@
                     // Display stars equal to the number of rating
                     for ($x = 0; $x < (int)$review['rating']; $x++)
                     {
-                        echo '<span style=font-size:100% class="fa fa-star checked"></span>';
+                        echo '<span style=font-size:100% class="checked"><i class="fa fa-star"></i></span>';
                     }
 
                     // Reviewer's comments
