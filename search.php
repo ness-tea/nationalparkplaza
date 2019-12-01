@@ -32,6 +32,7 @@ try {
         $stmt->execute($search_name);
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        print_r($search_name);
         print_r($parks);
     }
     else
