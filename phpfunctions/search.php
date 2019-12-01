@@ -7,7 +7,9 @@ $password = "12345678";
 $dbname = "nationalparkplaza";
 
 $search_name = $_POST['name'];
-$search_rating = $_POST['rating'];
+
+$url = "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+$search_rating = substr($url,-1);
 
 try {
     // Connect to the SQL databse using PDO
