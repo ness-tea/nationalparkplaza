@@ -15,7 +15,7 @@
     <div class="login-content">
         <h1>Log into an Account</h1>
         <br/>
-        <b>You must be logged in to write a review or submit a park.</b>
+        <strong>You must be logged in to write a review or submit a park.</strong>
         <br/>
         Log in to explore National Parks in your area today!
         
