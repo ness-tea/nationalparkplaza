@@ -32,7 +32,7 @@ try {
         $stmt->execute(trim($search_name));
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        print_r($search_name);Bruce Peninsula 
+        print_r($data);
     }
     else
     {
