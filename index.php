@@ -18,12 +18,11 @@
                 <p>Search a Park by name:</p>
                 <!-- Make a search box for searching a park by name -->
                 <form action="search.php" method="post">
-                    <!-- This code makes show word "Search..." in search box -->
                     <input type="buttom" placeholder="Search..." id="name" name="name">
-                    <!-- This code makes a submit buttom after search box -->
                 </form>
             </div>
-            <h3>OR</h3>
+            <br>
+        
             <p>Search a Park by rating:</p>
             <!-- Adds a drop-down for searching a park by rating -->
             <form action="search.php" meethod="post">
@@ -38,6 +37,8 @@
                     </select>
                 </div>
             </form>
+        
+            <button onclick="getLocation()">Find park near me</button>
 
             <div class="picture">
                 <picture>
