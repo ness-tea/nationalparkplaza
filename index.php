@@ -36,9 +36,9 @@
                 </div>
             </form>
             <br>
-            <div class="styled">
-                <button onclick="getLocation()">Find park near me</button>
-            </div>
+            
+            <button onclick="getLocation()">Find park near me</button>
+
             <div class="picture">
                 <picture>
                     <!-- The tags will present the images if the requirement specified by the 'media' attribute are satisfied. -->
