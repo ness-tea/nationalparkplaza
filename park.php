@@ -2,14 +2,17 @@
 
 <?php include('header.php'); ?>
 <?php include('menu.php'); ?>
-<?php include('phpfunctions/findparkbyid.php'); ?>
+<?php
+    // This PHP will find the park of concern by parkid provided in the URL. 
+    include('phpfunctions/findparkbyid.php'); 
+?> 
 
 <!-- This is the section of object page body, which style defined in the css -->
 <div class="wrap-object">
     <div class="object" id="indent">
         
-    <!-- This is the section of logo, which style defined in the css -->
-        <h1 class="acorn-logo"><?php echo $park[0]['parkname'] ?></h1>
+        <!-- Use PHP to fill in the park page's header-->
+        <h1 class="acorn-logo"><?php echo $park[0]['parkname']; ?></h1>
         
         <!-- The tags will present the images if the requirement specified by the 'media' attribute are satisfied. -->
         <picture class="acorn-logo" style="float:right">
@@ -17,34 +20,35 @@
             <img src="assets/acorn.jpg" alt="acorn">
         </picture>
 
-        <p>
-            <a href="write_review.html" class="buttonReview">Write an review</a>
-        </p>
-        <!-- This code makes a h2 header -->
+        <p><a href="submitreview.php" class="buttonReview">Write a review</a></p>
+
         <h2>General Park Information</h2>
-        <!-- This code makes a paragraph -->
-        <p>Dramatic cliffs rise from the turquoise waters of Georgian Bay. In large tracts of forest, black bears roam and rare reptiles find refuge in rocky areas and diverse wetlands. Ancient cedar trees spiral from the cliff-edge;
-            a multitude of orchids and ferns take root in a mosaic of habitats. Welcome to the magic of Bruce Peninsula National Park</p>
+
+        <!-- Use PHP to fill in general park info -->
+        <p><?php echo $park[0]['dsc']; ?></p>
+
         <!-- This code add a video with width and height we need -->
         <video width="480" height="400" controls>
             <source src="assets/Bruce Peninsula National Park.mp4" type="video/mp4">
             <source src="assets/Bruce Peninsula National Park.ogg" type="video/ogg">
             Your browser does not support the video tag.
         </video>
-        <!-- This code makes a h3 header -->
-        <h3>Things to do</h3>
-        <p>The lakeshores and vibrant woodlands of Bruce Peninsula National Park invite explorers of all ages. Adventurous visitors embark on guided scrambles over rocky Georgian Bay coastline. Throughout summer, families play and relax in the warm waters of Singing Sands Beach. Yurt camping amongst fall foliage is a wonderful way to unwind. And wildlife abounds within this vital biosphere reserve.</p>
-        <h3>Discover</h3>
-        <!-- This code makes a h4 header -->
-        <h4>Geology</h4>
-        <p>Explore ancient shorelines—the park’s dolomite limestone is over 400 million years old and Eastern white cedars 800 years old or more have been found growing from these rocks.</p>
 
-        <h4>Ecology</h4>
-        <p>The park’s size and habitat diversity accommodates large carnivores and wide ranging species such as Black Bears and Fishers and is home to the threatened Easter Massasauga Rattlesnake.</p>
+        <h3>Things to do</h3>
+        
+        <!-- Use PHP to fill in Things to Do with activities key -->
+        <p><?php echo $park[0]['activities']; ?></p>
+        
+        <h3>Discover</h3>
+
+        <!-- Use PHP to fill in discover with discover key -->
+        <p><?php echo $park[0]['discover']; ?></p>
+       
         <h3>Park management</h3>
-        <p>Bruce Peninsula National Park welcomes explorers of all ages to uncover the natural wonders of its limestone coasts, mixed-wood forests, cliffside cedars, clear-water lakes and vibrant orchids. Situated along Southern Ontario’s Niagara Escarpment, and part of a UNESCO World Biosphere Reserve, this stunning 156-sq-km park is easily accessible via highway, only four hours from Toronto.</p>
-        <p>This is the traditional home of the Saugeen Ojibway First Nations, who have drawn subsistence and spirituality from this land for centuries, as well as a protected preserve for more than 200 species of birds, mammals both small and large, amphibians and even some rare reptiles.</p>
-        <p>A captivating playground in all seasons, guests enjoy hikes ranging from front-country walks to multi-day backcountry treks, summertime swims in pristine lakes and rock-scrambles along the rugged Georgian Bay shoreline. Serene camping in comfortable yurts, drive-to campsites or the remote backcountry makes extended getaways into this magical environment both convenient and fun. </p>
+
+        <!-- Use PHP to fill in park management with parkmgmt key -->
+        <p><?php echo $park[0]['parkmgmt']; ?></p>
+        
         <h2>Park Location on Google Maps</h2>
         <!-- This code add a map picture with width and height we need -->
         <!-- This code add google mpas of the loction -->
