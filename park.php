@@ -143,17 +143,17 @@
                 foreach ($reviews as $review)
                 {
                     // Display name of reviewer
-                    $usr = strtok($review[0]['email'], '@');
+                    $usr = strtok($review['email'], '@');
                     echo "<span class=\"heading1\">".$usr."</span>";
                     
                     // Display stars equal to the number of rating
-                    for ($x = 0; $x < (int)$review[0]['rating']; $x++)
+                    for ($x = 0; $x < (int)$review['rating']; $x++)
                     {
                         echo "<span style=font-size:100% class=\"fa fa-star checked\"></span>";
                     }
 
                     // Reviewer's comments
-                    echo "<p>".$review[0]['review']."</p>";
+                    echo "<p>".$review['review']."</p>";
                 }
             ?>
 
