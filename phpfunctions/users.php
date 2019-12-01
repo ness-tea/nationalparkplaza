@@ -67,7 +67,7 @@ try {
         {
             // User exists
             echo "Login successful";
-            $_SESSION['email'] = $data['email'];
+            $_SESSION['email'] = $data[0]['email'];
             $_SESSION['loggedin'] = true;
             
             header("Location: https://{$_SERVER['HTTP_HOST']}/index.php");
