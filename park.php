@@ -145,7 +145,7 @@
                 {
                     // Display name of reviewer
                     $usr = strtok($review['email'], '@');
-                    echo "<h2 style=font-weight:bold>".$usr."</h2>";
+                    echo "<h3 style=font-weight:bold>".$usr."</h3>";
                     
                     // Display stars equal to the number of rating
                     for ($x = 0; $x < (int)$review['rating']; $x++)
