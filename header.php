@@ -13,6 +13,9 @@
     <!--- Google fonts --->
     <link href="https://fonts.googleapis.com/css?family=Forum|Julius+Sans+One|Lateef|Open+Sans&display=swap" rel="stylesheet">
     
+    <!--- Favicon links --->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- This is the icon shows before the url link -->
     <link rel="icon" href="assets/header-ico.png">
     
