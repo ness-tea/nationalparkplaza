@@ -71,8 +71,6 @@
                 $stmt->execute(array($parkid));  
 
                 $avg = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                echo $avg[0];
             ?>
             <!-- This code add five star format with checked or uncheck results -->
             <span class="heading"><?php echo $avg; ?> out of 5</span>
