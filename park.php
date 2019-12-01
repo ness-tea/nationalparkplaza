@@ -148,9 +148,9 @@
                     echo "<h3 style=font-weight:bold>".$usr."</h3>";
                     
                     // Display stars equal to the number of rating
-                    for ($x = 0; $x < (int)$review['rating']; $x++)
+                    for ($x = 0; $x < (int)($review['rating']); $x++)
                     {
-                        echo '<span style=font-size:100% class="checked"><i class="fa fa-star"></i></span>';
+                        echo '<span style=font-size:100% class="fa fa-star checked"></span>';
                     }
 
                     // Reviewer's comments
