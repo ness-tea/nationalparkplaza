@@ -36,7 +36,7 @@ try {
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         // Find all reviews in the database for park matching user's input
-        $query = "SELECT * FROM Reviews WHERE parkname = ?"
+        $query = "SELECT * FROM Reviews WHERE parkname = ?";
         $stmt = $conn->prepare($query);
         $stmt->execute(array($search_name));
 
