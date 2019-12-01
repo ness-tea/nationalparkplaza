@@ -56,7 +56,7 @@
         <div id="map">
             <script>
                 //Retrieve matching parks from php array using json_encode()
-                var thisPark = <?php echo json_encode($parks); ?>;
+                var thisPark = <?php echo json_encode($park); ?>;
 
                 // Populate park points
                 populatePark(thisPark[0]);
