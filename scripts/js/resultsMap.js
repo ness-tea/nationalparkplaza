@@ -48,7 +48,6 @@ function addMarkersOnMap() {
         var contentString = '<div id="content"><h4 style="color:black" >' + markersOnMap[i].placeName +
             '</h4><p>' + markersOnMap[i].placeInfo + '</p>' +
             '<a href=' + markersOnMap[i].placeHref + '>View More Details</a>' + '</div>';
-        print(contentString);
         // Set google maps marker position
         const marker = new google.maps.Marker({
             position: markersOnMap[i].LatLng[0],
