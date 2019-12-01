@@ -39,7 +39,7 @@ try {
     {
         // User is searching by park rating.
         // Find all parks in the database for park matching user's rating input
-        $query = "SELECT * FROM Parks WHERE parkname = (SELECT DISTINCT parkname FROM Reviews WHERE rating = ?)";
+        $query = "SELECT * FROM Parks WHERE parkname in (SELECT DISTINCT parkname FROM Reviews WHERE rating = ?)";
         $stmt = $conn->prepare($query);
         $stmt->execute(array($search_rating));
 
