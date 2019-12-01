@@ -15,6 +15,8 @@ var Pelee = {
     lng: -82.518484
 };
 
+var Park = {};
+
 function initPeleeMap() {
     
     // The map shows centered at park with zoom 
@@ -58,6 +60,30 @@ function initBruceMap() {
     // The marker positioned at park location
     var marker = new google.maps.Marker({
         position: Bruce,
+        map: map
+    });
+}
+
+function populatePark(park)
+{
+    // Fill in the Park struct
+    var Park = {
+        lat: park['latitude'],
+        lng: park['longitude']
+    }
+}
+
+function initParkMap() {
+    // The map shows centered at park with zoom 
+    var map = new google.maps.Map(
+        document.getElementById('map'), {
+            zoom: 10,
+            center: Park
+        });
+
+    // The marker positioned at park location
+    var marker = new google.maps.Marker({
+        position: Park,
         map: map
     });
 }

@@ -54,8 +54,14 @@
         <!-- This code add a map picture with width and height we need -->
         <!-- This code add google mpas of the loction -->
         <div id="map">
+            <script>
+                //Retrieve matching parks from php array using json_encode()
+                var thisPark = <?php echo json_encode($parks); ?>;
 
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initBruceMap">
+                // Populate park points
+                populatePark(thisPark[0]);
+            </script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initParkMap">
             </script>
 
         </div>
