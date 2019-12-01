@@ -32,7 +32,7 @@ try {
         $stmt->execute($search_name);
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        print_r($parks);
+        print_r($search_name);
     }
     else
     {
