@@ -19,7 +19,7 @@
                 <!-- This code makes a search box -->
                 <form action="phpfunctions/search.php" method="post">
                     <!-- This code makes show word "Search..." in search box -->
-                    <input type="buttom" placeholder="Search..." name="search">
+                    <input placeholder="Search..." id="search" name="search">
                     <!-- This code makes a submit buttom after search box -->
                 </form>
 
