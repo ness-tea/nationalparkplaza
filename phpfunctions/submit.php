@@ -39,7 +39,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query to check if there are any parks in the database matching the user's input
-    $query = "SELECT * FROM Parks WHERE parkname = ?";
+    $query = "SELECT * FROM Parks WHERE parkname LIKE CONCAT('%',?,'%')";
     $stmt = $conn->prepare($query);
     $stmt->execute(array($pname));
 
@@ -87,9 +87,9 @@ try {
 
             
             // Redirect to page for this park page.
-            if (strpos($url, '?parkid=') == true)
+            if (strpos($_SERVER['REQUEST_URI'], 'parkid') != false)
             {
-                header("Location: https://{$_SERVER['HTTP_HOST']}/park.php?parkid".$parkpage);    
+                header("Location: https://{$_SERVER['HTTP_HOST']}/park.php?parkid=".$parkpage);    
             }
             else
             {
