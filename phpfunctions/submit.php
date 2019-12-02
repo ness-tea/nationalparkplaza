@@ -89,7 +89,7 @@ try {
             // Redirect to page for this park page.
             if (strpos($_SERVER['REQUEST_URI'], 'parkid') != false)
             {
-                header("Location: https://{$_SERVER['HTTP_HOST']}/park.php?parkid=".$parkpage);    
+                header("Location:javascript://history.go(-1)");    
             }
             else
             {
