@@ -26,6 +26,13 @@ $latitude = $_POST['latitude'];
 $rating = $_POST['rating'];
 $review = $_POST['review'];
 
+$url = "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+$search_rating = substr($url,-1);
+
+// If submitting a review from object page, autofill the title for user
+$url = "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+$parkpage = substr($url,-1);
+
 try {
     // Connect to the SQL databse using PDO
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
@@ -80,7 +87,14 @@ try {
 
             
             // Redirect to page for this park page.
-            header("Location: https://{$_SERVER['HTTP_HOST']}/park.php?parkid=".$data[0]['parkid']);
+            if (strpos($url, '?parkid=') == true)
+            {
+                header("Location: https://{$_SERVER['HTTP_HOST']}/park.php?parkid".$parkpage);    
+            }
+            else
+            {
+                header("Location: https://{$_SERVER['HTTP_HOST']}/search.php");
+            }
         }
         else
         {
