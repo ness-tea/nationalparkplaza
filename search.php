@@ -39,7 +39,9 @@ try {
     }
     else if (isset($_POST['location']))
     {   
-        echo $search_locate;
+        // Unfortunately could not get search by location working.
+        // Clicking on 'Find Near Me' will just populate the results page with all parks in the database.
+
         // Save all parks and do post processing with JS later
         $query = "SELECT * From Parks WHERE park_id = ?";
         $stmt = $conn->prepare($query);

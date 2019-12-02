@@ -36,6 +36,9 @@ try {
     $stmt = $conn->prepare($query);
     $stmt->execute(array($pname));
 
+    // Store queried data into array if any exists
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     // User is doing a Park submission
     if (isset($_POST['submitpark']))
     {   
@@ -76,8 +79,9 @@ try {
             
             echo "Park review submitted successfully";
 
+            
             // Redirect to page for this park page.
-            header("Location: https://{$_SERVER['HTTP_HOST']}/search.php");
+            header("Location: https://{$_SERVER['HTTP_HOST']}/park.php?parkid=$data[0]['parkid']");
         }
         else
         {

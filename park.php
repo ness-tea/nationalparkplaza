@@ -66,10 +66,7 @@
         <div id="map">
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64g1CyyNFGJdJj8DxVpjr6Qbe17C89v0&callback=initResultMap"></script>
         </div>
-        <address>
-            <p>Parks Canada Visitor Centre</p>
-            <p>120 Chi sin tib dek Road<br />Box 189<br />Tobermory ON N0H 2R0</p>
-        </address>
+
         <!-- This is the section of rating on the object page, which style defined in the css -->
         <div class="total-review">
             <h2>Visitor Reviews</h2>
