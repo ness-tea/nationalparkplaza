@@ -80,7 +80,7 @@ try {
 
             
             // Redirect to page for this park page.
-            header("Location: https://{$_SERVER['HTTP_HOST']}/park.php?parkid=`$data[0]['parkid']`");
+            header("Location: https://{$_SERVER['HTTP_HOST']}/park.php?parkid=".$data[0]['parkid']."");
         }
         else
         {
