@@ -44,12 +44,12 @@
 
             <div class="search-inline">
                 <p>Search by Location:</p>
-                <form method="post">
+                <form action="search.php" method="post">
+                    <button type="submit" id="location" name="location" value="">Find Near Me</button>
                     <script>
                         var elem = document.getElementById("location");
                         elem.value = getLocation();
                     </script>
-                    <button type="submit" id="location" name="location" value="">Find Near Me</button>
                 </form>
                 <p id="find-me"></p>
             </div>
