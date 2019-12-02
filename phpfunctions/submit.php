@@ -14,6 +14,7 @@ $dbname = "nationalparkplaza";
 $pname = str_ireplace("park", "", $_POST['parkname']);    // Remove any instances of park
 $pname = str_ireplace("national", "", $pname);      // Remove any instances of national
 $pname = trim(ucwords(strtolower($pname)));  // Trim leading/following white spaces, convert string to lowercase, then capitlize first letter of every word.
+$pname = str_ireplace("  ", " ", $pname);   // remove any cases of double white space
 
 $desc = $_POST['desc'];
 $activ = $_POST['activities'];
