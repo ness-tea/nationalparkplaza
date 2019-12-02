@@ -45,7 +45,7 @@
             <div class="search-inline">
                 <p>Search by Location:</p>
                 <form action="search.php" method="post">
-                    <button type="button" id="location" name="location" value="">Find Near Me</button>
+                    <button type="submit" id="location" name="location" value="">Find Near Me</button>
                     <script>
                         var elem = document.getElementById("location");
                         elem.value = getLocation();
