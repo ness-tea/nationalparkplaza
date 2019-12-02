@@ -18,6 +18,8 @@ $search_name = trim(ucwords(strtolower($pname)));  // Trim leading/following whi
 $url = "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 $search_rating = substr($url,-1);
 
+// Store closest park to user
+$search_locate = $_POST['location'];
 try {
     // Connect to the SQL databse using PDO
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);    
@@ -37,13 +39,13 @@ try {
     }
     else if (isset($_POST['location']))
     {   
+        print_r($search_locate);
         // Save all parks and do post processing with JS later
         $query = "SELECT * From Parks";
         $stmt = $conn->prepare($query);
         $stmt->execute();
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $searchLocation = true;
     }
     else
     {
