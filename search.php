@@ -114,10 +114,10 @@ $conn = null;
                 <col width="10">
                 <col width="300">
                 <!-- Each table row is defined with the <tr> tag. -->
-                <tr style="color: white; background-color: black">
+                <tr style="color: white; background-color: black; font-weight:400">
                     <!-- A table header is defined with the <th> tag. -->
-                    <th>Name</th>
-                    <th>Information</th>
+                    <th>NAME</th>
+                    <th>INFORMATION</th>
                 </tr>
 
                 <!-- Use PHP to populate results page table with parks matching the user's query -->
