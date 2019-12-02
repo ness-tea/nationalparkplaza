@@ -111,10 +111,10 @@ $conn = null;
             <br /><br />
 
             <table>
-                <col style="color: white; background-color: black" width="10">
-                <col style="color: white; background-color: black" width="300">
+                <col width="10">
+                <col width="300">
                 <!-- Each table row is defined with the <tr> tag. -->
-                <tr>
+                <tr style="color: white; background-color: black">
                     <!-- A table header is defined with the <th> tag. -->
                     <th>Name</th>
                     <th>Information</th>
