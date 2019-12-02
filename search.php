@@ -91,8 +91,7 @@ $conn = null;
     if (<?php echo $searchLocation; ?>)
     {
         // Find parks near the user's location
-        var closest = getLocation(searchParks);
-        addMarker(closest);
+        addMarker(getLocation(searchParks));
     }
     else
     {
