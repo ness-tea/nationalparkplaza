@@ -19,7 +19,7 @@ function getLocation(Parks) {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
     
-    return closest['parkname'];
+    return closest['park_id'];
 }
 
 

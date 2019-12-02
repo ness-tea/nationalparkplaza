@@ -274,7 +274,6 @@ input[type=button] {
     width: 180px;
     border-radius: 4px;
     overflow: hidden;
-    background: 96% / 20% no-repeat white;
 }
 
 .styled select {

@@ -41,9 +41,9 @@ try {
     {   
         echo $search_locate;
         // Save all parks and do post processing with JS later
-        $query = "SELECT * From Parks";
+        $query = "SELECT * From Parks WHERE park_id = ?";
         $stmt = $conn->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array($search_locate));
 
         $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
