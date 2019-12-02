@@ -31,14 +31,14 @@
         </picture>
 
         <br>
-        <?php echo "<p><a href=\"submitreview.php?parkid=".$park[0]['park_id']."\" class=\"buttonReview\">Write a review</a></p>" ?>
-
-        <h2>General Park Information</h2>
-
         <!-- Use PHP to fill in general park info. If user isn't logged in, take them to login page -->
         <?php 
-            echo $_SESSION['loggedin'] == true ? "<p><a href=\"submitreview.php?parkid=".$park[0]['park_id']."\" class=\"buttonReview\">Write a review</a></p>" : "<p><a href=\"login.php\" class=\"buttonReview\">Write a review</a></p>" ?>
+            echo $_SESSION['loggedin'] == true ? "<p><a href=\"submitreview.php?parkid=".$park[0]['park_id']."\" class=\"buttonReview\">Write a review</a></p>" : "<p><a href=\"login.php\" class=\"buttonReview\">Write a review</a></p>" 
+        ?>
         <br>
+
+
+        <h2>General Park Information</h2>
 
         <!-- This code add a video with width and height we need -->
         <video width="480" height="400" controls>

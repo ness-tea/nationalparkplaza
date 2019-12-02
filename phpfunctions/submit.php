@@ -36,9 +36,6 @@ try {
     $stmt = $conn->prepare($query);
     $stmt->execute(array($pname));
 
-    // Store queried data into array if any exists
-    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     // User is doing a Park submission
     if (isset($_POST['submitpark']))
     {   
