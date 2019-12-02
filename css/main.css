@@ -265,7 +265,7 @@ form {
     margin-right: 100px;
 }
 
-button {
+input[type=button] {
     color: #6e6d6d;
     background: transparent;
     font-size: 15px;
