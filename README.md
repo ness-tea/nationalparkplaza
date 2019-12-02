@@ -17,6 +17,9 @@ The National Park Plaza site allows users to do the following:
  *email: truonv1@mcmaster.ca*<br/>
  *Enrolled in CS 4WW3*
  
+## Special notes:
+- CREATE TABLE statements were not made in an .sql file - they were run by accessing the databaseAccess.php file.
+
 The following are answers to the inquiries needed for **Add-on Task 2**.
 
 ## Add-on Task 2 
