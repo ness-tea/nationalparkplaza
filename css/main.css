@@ -201,7 +201,7 @@ li.dropdown {
 }
 
 /* Styling the register and login form on register page */
-.register-content, .login-content, .search-content {
+.register-content, .login-content, .search-content, .profile-content {
     padding: 2% 4%;
     margin: 0 30%;
     width: 35%;
