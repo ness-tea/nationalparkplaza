@@ -1,6 +1,9 @@
 <!DOCTYPE hmtl>
 
+
 <?php
+    session_start();
+
     include('header.php');
     include('menu.php');
 ?>
@@ -15,15 +18,15 @@
         <h1>Your Profile</h1>
         <br/>
         <h3>Name:</h3>
-        <p>Place Holder Name here.</p>
+        <p><?php echo $_SESSION['fullname']; ?></p>
         <br/>
         <h3>Email:</h3>
-        <p>Place Holder Email here.</p>
+        <p><?php echo $_SESSION['email']; ?></p>
         <br/>
         <h3>Birth Date:</h3>
         <p>Place Holder Birth Date here.</p>
         
-        <!-- Display Reviews by current user -->
+        <!-- (TODO) Display Reviews by current user -->
         <h2>Your Reviews</h2>
         <br/>
         <br/>
