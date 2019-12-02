@@ -39,7 +39,7 @@ try {
     }
     else if (isset($_POST['location']))
     {   
-        print_r($search_locate);
+        echo $search_locate;
         // Save all parks and do post processing with JS later
         $query = "SELECT * From Parks";
         $stmt = $conn->prepare($query);
