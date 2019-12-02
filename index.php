@@ -4,6 +4,7 @@
     include('header.php');
     include('menu.php');
 ?>
+
     <!-- This is the section of search page body, which style defined in the css -->
     <div class="wrap-search">
         <div id="indent"></div>
@@ -42,10 +43,11 @@
             </div>
 
             <div class="search-inline">
-                <p>Search by Location</p>
-                <form action="search.php" method="post">
-                    <button name="location">Find Near Me</button>
+                <p>Search by Location:</p>
+                <form method="post">
+                    <button name="location" onclick="getLocation()">Find Near Me</button>
                 </form>
+                <p id="find-me"></p>
             </div>
 
 
