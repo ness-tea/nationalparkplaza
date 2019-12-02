@@ -96,7 +96,7 @@
 
         </div>
         <br>
-        <?php echo "<p><a href=\"submitreview.php?parkid=".$park[0]['park_id']."\" class=\"buttonReview\">Write a review</a></p>" ?>
+        <?php echo "<p><a href=<?php $_SESSION['loggedin'] == true ? \"submitreview.php?parkid=".$park[0]['park_id']."\" : \"login.php\" class=\"buttonReview\">Write a review</a></p>" ?>
         <br>
     </div>
 </div>
