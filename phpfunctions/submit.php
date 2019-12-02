@@ -68,6 +68,8 @@ try {
         // Check if the park exists in the database.
         if ($stmt->fetchColumn() != 0)
         {
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
             // The park exists. We can add the user's review to the database.
             $query = "INSERT INTO Reviews (email, parkname, rating, review)
                     VALUES (:email, :parkname, :rating, :review)";   
