@@ -101,7 +101,7 @@ $conn = null;
     <div class="main" id="indent">
 
         <h1>List of National Parks</h1>
-        
+        <br>
         <!-- This is the section of results table, which style defined in the css -->
         <div class="results-table">
             <!-- Embedding a live map using Javascript -->
@@ -111,8 +111,8 @@ $conn = null;
             <br /><br />
 
             <table>
-                <col width="10">
-                <col width="300">
+                <col style="color: white; background-color: black" width="10">
+                <col style="color: white; background-color: black" width="300">
                 <!-- Each table row is defined with the <tr> tag. -->
                 <tr>
                     <!-- A table header is defined with the <th> tag. -->
