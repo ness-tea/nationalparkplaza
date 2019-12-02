@@ -88,19 +88,12 @@ $conn = null;
     // Retrieve matching parks from php array using json_encode()
     var searchParks = <?php echo json_encode($parks); ?>;
 
-    if (<?php echo $searchLocation; ?>)
+    // Add the array elements as markers for google API live map
+    for (var i = 0; i < searchParks.length; i++)
     {
-        // Find parks near the user's location
-        addMarker(getLocation(searchParks));
+        addMarker(searchParks[i]);
     }
-    else
-    {
-        // Add the array elements as markers for google API live map
-        for (var i = 0; i < searchParks.length; i++)
-        {
-            addMarker(searchParks[i]);
-        }
-    }
+
 </script>
 
 <!-- This is the section of results page body, which style defined in the css -->
